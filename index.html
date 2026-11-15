@@ -148,6 +148,11 @@ footer{border-top:1px solid var(--line);color:var(--text-3);font-size:12px;text-
 footer a{text-decoration:underline}
 .reveal{opacity:0;transform:translateY(16px);transition:all .6s ease}
 .reveal.in{opacity:1;transform:none}
+
+#dorms{position:fixed;z-index:4;left:0;right:0;bottom:0;max-width:none;margin:0;padding:0;background:#f3f3f3;display:flex;flex-direction:column}
+#dorms[hidden]{display:none !important}
+#dorms iframe{flex:1;width:100%;height:100%;min-height:0;border:0;background:#f3f3f3}
+body.dorms-open{overflow:hidden}
 </style>
 </head>
 <body>
@@ -269,6 +274,9 @@ footer a{text-decoration:underline}
   <a href="https://commons.wikimedia.org/wiki/File:Von_Kleinsmid_Center_of_USC_-_panoramio.jpg" target="_blank" rel="noopener">Von KleinSmid Center</a> by Bohao Zhao (CC BY 3.0) ·
   <a href="https://commons.wikimedia.org/wiki/File:Los_Angeles_Memorial_Coliseum_(29297859221).jpg" target="_blank" rel="noopener">LA Memorial Coliseum</a> by Anthony Kernich (CC BY 2.0)
 </footer>
+<section id="dorms" hidden aria-label="Dorm matching">
+  <iframe title="Dorm matching application" src="about:blank" data-src="dorms/index.html"></iframe>
+</section>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -361,7 +369,36 @@ document.getElementById('menuClose').onclick=()=>menu.close();
 menu.addEventListener('click',e=>{if(e.target===menu)menu.close();});
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.close()));
 const toast=document.getElementById('toast');let tt;
-document.querySelectorAll('[data-tab]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();toast.textContent=a.dataset.tab+' tab is coming soon';toast.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('show'),1800);}));
+const dormsPanel=document.getElementById('dorms');
+const dormFrame=dormsPanel.querySelector('iframe');
+function placeDorms(){dormsPanel.style.top=document.querySelector('.nav').offsetHeight+'px';}
+function openDorms(){
+  window.scrollTo(0,0);
+  placeDorms();
+  if(!dormFrame.dataset.loaded){dormFrame.src=dormFrame.dataset.src;dormFrame.dataset.loaded='1';}
+  dormsPanel.hidden=false;
+  document.body.classList.add('dorms-open');
+  if(location.hash!=='#dorms')history.pushState(null,'','#dorms');
+}
+function closeDorms(){
+  if(dormsPanel.hidden)return;
+  dormsPanel.hidden=true;
+  document.body.classList.remove('dorms-open');
+  if(location.hash==='#dorms')history.replaceState(null,'',location.pathname+location.search);
+}
+document.querySelectorAll('[data-tab]').forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault();
+  if(a.getAttribute('href')==='#dorms'){openDorms();return;}
+  closeDorms();
+  toast.textContent=a.dataset.tab+' tab is coming soon';
+  toast.classList.add('show');
+  clearTimeout(tt);
+  tt=setTimeout(()=>toast.classList.remove('show'),1800);
+}));
+window.addEventListener('resize',()=>{if(!dormsPanel.hidden)placeDorms();});
+window.addEventListener('hashchange',()=>{if(location.hash==='#dorms')openDorms();else closeDorms();});
+document.querySelectorAll('a[href="#top"],a[href="#play"],a[href="#features"]').forEach(a=>a.addEventListener('click',()=>closeDorms()));
+if(location.hash==='#dorms')openDorms();
 const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)en.target.classList.add('in');}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 

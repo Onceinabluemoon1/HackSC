@@ -188,7 +188,55 @@ button.avatar:hover{transform:scale(1.05);box-shadow:0 0 0 3px rgba(255,204,0,.3
 .pf-top b{display:block;font-size:15px}
 .pf-top small{color:var(--text-2);font-size:12px}
 
-.panel{position:fixed;z-index:4;left:0;right:0;bottom:0;max-width:none;margin:0;padding:0;background:#f3f3f3;display:flex;flex-direction:column}
+.chat-fab{position:fixed;right:20px;bottom:20px;z-index:40;width:60px;height:60px;border-radius:50%;border:3px solid var(--gold);background:var(--cardinal);color:var(--gold);font-size:28px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(80,0,0,.35);transition:transform .2s}
+.chat-fab:hover{transform:scale(1.07) rotate(-4deg)}
+.chat-fab .dot{position:absolute;top:2px;right:2px;width:14px;height:14px;border-radius:50%;background:var(--gold);border:2px solid var(--cardinal)}
+.chat-fab.open .dot{display:none}
+@keyframes tipIn{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:none}}
+.chat{position:fixed;right:20px;bottom:92px;z-index:40;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));background:var(--bg);border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px rgba(40,10,0,.3);display:flex;flex-direction:column;overflow:hidden;transform-origin:bottom right;animation:chatIn .22s cubic-bezier(.2,.8,.3,1.2)}
+.chat[hidden]{display:none}
+@keyframes chatIn{from{opacity:0;transform:scale(.9) translateY(10px)}to{opacity:1;transform:none}}
+.chat-head{background:var(--cardinal);color:#fff;padding:14px 14px 12px 16px;display:flex;align-items:center;gap:10px;border-bottom:4px solid var(--gold)}
+.chat-av{width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--cardinal);display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}
+.chat-head b{display:block;font-family:var(--serif);font-weight:800;font-size:17px}
+.chat-head small{font-size:12px;opacity:.85;display:flex;align-items:center;gap:5px}
+.chat-head small::before{content:"";width:7px;height:7px;border-radius:50%;background:#7ee08a}
+.chat-x{margin-left:auto;background:rgba(255,255,255,.12);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:17px;display:flex;align-items:center;justify-content:center}
+.chat-body{flex:1;overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:85%;padding:10px 13px;font-size:14px;line-height:1.5;border-radius:16px;animation:fade .25s ease}
+.msg.bot{background:var(--panel);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.me{background:var(--cardinal);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.msg .acts button{border:1.5px solid var(--cardinal);background:transparent;color:var(--cardinal);border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.msg .acts button:hover{background:rgba(153,0,0,.06)}
+@media (prefers-color-scheme: dark){.msg .acts button{color:var(--gold);border-color:var(--gold)}}
+.typing{display:inline-flex;gap:4px;align-items:center}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--text-3);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.chat-sugg{display:flex;gap:6px;overflow-x:auto;padding:0 14px 10px;scrollbar-width:none}
+.chat-sugg::-webkit-scrollbar{display:none}
+.chat-sugg button{flex:none;border:1px solid var(--line-2);background:var(--panel);color:var(--text);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:500}
+.chat-sugg button:hover{border-color:var(--cardinal)}
+.chat-in{display:flex;gap:8px;padding:10px 12px 12px;border-top:1px solid var(--line);background:var(--panel)}
+.chat-in input{flex:1;height:42px;border-radius:999px;border:1px solid var(--line-2);background:var(--bg);color:var(--text);padding:0 16px;font:inherit;font-size:14px}
+.chat-in input:focus{outline:none;border-color:var(--cardinal);box-shadow:0 0 0 3px rgba(153,0,0,.15)}
+.chat-send{width:42px;height:42px;border-radius:50%;border:none;background:var(--cardinal);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none}
+.chat-note{font-size:10.5px;color:var(--text-3);text-align:center;padding:0 12px 8px;background:var(--panel)}
+@media (max-width:480px){.chat{right:12px;left:12px;width:auto;bottom:86px}.chat-fab{right:14px;bottom:14px}}
+
+.ai-badge{display:inline-flex;align-items:center;gap:3px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.05em;background:var(--gold);color:var(--cardinal);padding:2px 7px;border-radius:999px;vertical-align:middle;margin-left:4px}
+.ai-badge[hidden]{display:none}
+.chat-head small.off::before{background:#c9c2b8}
+.msg-tag{display:flex;align-items:center;gap:4px;font-size:10.5px;font-weight:600;color:var(--text-3);margin-top:7px}
+.msg-tag.ai{color:var(--cardinal)}
+@media (prefers-color-scheme: dark){.msg-tag.ai{color:var(--gold)}}
+.chat-sugg button.fu{border-color:var(--cardinal);color:var(--cardinal);background:rgba(153,0,0,.04)}
+.chat-sugg button.fu::before{content:"\2726 ";color:var(--gold)}
+@media (prefers-color-scheme: dark){.chat-sugg button.fu{color:var(--gold);border-color:var(--gold)}}
+.caret{display:inline-block;width:2px;height:1em;background:var(--cardinal);vertical-align:-2px;margin-left:1px;animation:blink 1s infinite}
+
+.panel{position:fixed;z-index:4;left:0;right:0;bottom:0;max-width:none;margin:0;padding:0;background:var(--bg);display:flex;flex-direction:column}
 .panel[hidden]{display:none !important}
 .panel iframe{flex:1;width:100%;height:100%;min-height:0;border:0;background:#f3f3f3}
 body.dorms-open{overflow:hidden}
@@ -362,6 +410,14 @@ body.dorms-open{overflow:hidden}
     <div class="factions"><button type="button" class="fbtn" data-close>Cancel</button><button type="submit" class="fbtn fbtn-p">Save profile</button></div>
   </form>
 </dialog>
+<button class="chat-fab" id="chatFab" aria-label="Open TrojanMatch assistant" aria-expanded="false"><i class="ti ti-message-chatbot"></i><span class="dot"></span></button>
+<div class="chat" id="chat" hidden role="dialog" aria-label="TrojanMatch assistant">
+  <div class="chat-head"><div class="chat-av"><i class="ti ti-horse"></i></div><div><b>Traveler <span class="ai-badge" id="aiBadge" hidden><i class="ti ti-sparkles"></i>AI</span></b><small id="chatStatus">TrojanMatch assistant</small></div><button class="chat-x" id="chatClose" aria-label="Close assistant"><i class="ti ti-x"></i></button></div>
+  <div class="chat-body" id="chatBody" aria-live="polite"></div>
+  <div class="chat-sugg" id="chatSugg"></div>
+  <form class="chat-in" id="chatForm"><input id="chatInput" placeholder="Ask about events, rides, clubs, dorms…" autocomplete="off" aria-label="Message"><button class="chat-send" aria-label="Send"><i class="ti ti-arrow-up"></i></button></form>
+  <div class="chat-note">Connecting…</div>
+</div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -496,6 +552,15 @@ document.querySelectorAll('a[href="#top"]').forEach(a=>a.addEventListener('click
 document.querySelectorAll('a[href="#features"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();closePanels();pEl('features').scrollIntoView({behavior:'smooth'});}));
 document.querySelectorAll('a[href="#play"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();closePanels();setTimeout(goPlay,30);}));
 markActive('home');
+const dormFrame=document.querySelector('#dorms iframe');
+dormFrame.addEventListener('load',()=>{try{
+  const d=dormFrame.contentDocument;if(!d||d.getElementById('tm-theme'))return;
+  const l=d.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap';d.head.appendChild(l);
+  const st=d.createElement('style');st.id='tm-theme';
+  st.textContent='body,button,input,select,textarea,label{font-family:Inter,system-ui,-apple-system,sans-serif!important}h1,h2,h3,.room-title,.done-code{font-family:Fraunces,Georgia,serif!important;font-weight:800!important;letter-spacing:0!important}body{background:#fbf7ef!important;-webkit-font-smoothing:antialiased}.button,button.button,.dorm-btn{border-radius:999px!important;padding-left:1.4rem!important;padding-right:1.4rem!important}input,select,textarea{border-radius:12px!important}.room-title{display:none!important}.tm-intro{padding:26px 6vw 6px}.tm-intro .tm-eyebrow{display:inline-flex;align-items:center;font:600 12px Inter,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#990000;background:rgba(255,204,0,.28);padding:4px 10px;border-radius:999px}.tm-intro h2{font-family:Fraunces,Georgia,serif!important;font-weight:800!important;font-size:clamp(26px,4vw,34px)!important;color:#1f1a16;margin:10px 0 6px;line-height:1.15}.tm-intro p{font:400 15px/1.55 Inter,system-ui,sans-serif;color:#5e574f;margin:0;max-width:560px}';
+  d.head.appendChild(st);
+  if(!d.querySelector('.tm-intro')){const intro=d.createElement('div');intro.className='tm-intro';intro.innerHTML='<span class="tm-eyebrow">Dorm matching</span><h2>Roommates picked for you</h2><p>Fill in your housing preferences step by step. We\'ll match you with roommates who fit your sleep schedule, study habits, and social style.</p>';const app=d.getElementById('app');(app?app.parentNode:d.body).insertBefore(intro,app||d.body.firstChild);}
+}catch(e){}});
 if(ROUTES[location.hash.slice(1)])openPanel(location.hash.slice(1));
 
 (function(){
@@ -511,7 +576,7 @@ if(ROUTES[location.hash.slice(1)])openPanel(location.hash.slice(1));
   const y=$('pfYear'),now=new Date().getFullYear();for(let i=now;i<=now+7;i++){const o=document.createElement('option');o.textContent=i;y.appendChild(o);}
   const pmenu=$('pmenu'),abtn=$('avatarBtn');
   function render(){
-    const on=!!user;$('signinBtn').hidden=on;$('avatarWrap').hidden=!on;
+    window.tmUser=user;const on=!!user;$('signinBtn').hidden=on;$('avatarWrap').hidden=!on;
     if(!on){closeMenu();return;}
     const ini=initials(user.name);['avatarInitials','pmInitials','pfInitials'].forEach(i=>$(i).textContent=ini);
     $('pmName').textContent=user.name;$('pmEmail').textContent=user.email;$('pmMeta').textContent=meta(user);
@@ -548,6 +613,90 @@ if(ROUTES[location.hash.slice(1)])openPanel(location.hash.slice(1));
   });
   $('signOutBtn').addEventListener('click',()=>{user=null;put('tm_session',null);render();flash('Signed out');});
   render();
+})();
+
+(function(){
+  const $=id=>document.getElementById(id);
+  const fab=$('chatFab'),box=$('chat'),body=$('chatBody'),inp=$('chatInput'),sugg=$('chatSugg');
+  const signedName=()=>{const n=$('pmName');return $('avatarWrap').hidden?'':(n.textContent||'').split(' ')[0];};
+  const ACT={
+    events:['Open Event matching',()=>openPanel('events')],
+    carpools:['Open Carpools',()=>openPanel('carpools')],
+    messages:['Open Messages',()=>openPanel('messages')],
+    clubs:['Open Club matching',()=>openPanel('clubs')],
+    dorms:['Open Dorm matching',()=>openPanel('dorms')],
+    game:['Play the horse game',()=>{closePanels();setTimeout(goPlay,30);}],
+    signin:['Sign in',()=>$('signinBtn').click()],
+    profile:['Edit my profile',()=>{if($('avatarWrap').hidden)$('signinBtn').click();else $('editProfileBtn').click();}],
+    menu:['Open the menu',()=>$('burger').click()]
+  };
+  const KB=[
+    {k:/carpool|ride|uber|lyft|airport|drive|car\b|split/i,a:'Carpools help you share a ride to events, airports, concerts, or trips. Browse ride requests, filter by destination, or post your own and others can join. Splitting rides saves money and is safer in a group.',x:['carpools','events']},
+    {k:/message|chat|group ?chat|dm|text/i,a:'Messages holds the group chats for events and rides you join, so you can coordinate plans with your group. You can report anything that feels off.',x:['messages']},
+    {k:/event|party|happening|tonight|weekend|concert|engage/i,a:'Event matching shows on-campus events from EngageSC picked for your interests and schedule. Find people to go with so you never have to go alone, and grab a carpool if it is off campus.',x:['events','carpools']},
+    {k:/club|org|organization|join|society|team/i,a:'Club matching asks your year, how much time you have each week, and your interests. Then it ranks student orgs from EngageSC with a match score. Not sure what you like? Hit "Generate Random Interest".',x:['clubs']},
+    {k:/dorm|roommate|housing|room|live|apartment|village/i,a:'Dorm matching helps you find roommates who match your sleep schedule, study habits, and social style. It is still being built, so some parts may change.',x:['dorms']},
+    {k:/profile|major|graduat|class of|edit|avatar/i,a:'Click your avatar in the top right, then Edit profile. You can add your major, graduation month, and graduation year. All of them are optional, so leave anything blank if you want.',x:['profile']},
+    {k:/sign ?in|log ?in|account|sign ?up|password|email/i,a:'Tap Sign in at the top right and enter your name and USC email. This prototype has no password, and your info stays in your browser.',x:['signin']},
+    {k:/privacy|data|safe|secure|store|delete/i,a:'In this prototype, your profile is saved only in your own browser. Nothing is sent to a server. Signing out hides it, and you can clear it from your browser settings.',x:[]},
+    {k:/game|horse|play|score|jump/i,a:'The Ride break game lets you gallop across campus past Doheny, Bovard, Mudd Hall, Tommy Trojan, VKC, and the Coliseum. Tap or press Space to jump over scooters, cones, and textbooks.',x:['game']},
+    {k:/menu|navigate|where|find|tab|home/i,a:'Use the menu button at the top left. It has Home, Event matching (with Carpools and Messages), Club matching, and Dorm matching.',x:['menu']},
+    {k:/match|percent|score|how does.*work|ai/i,a:'TrojanMatch compares what you tell us, like interests, schedule, and lifestyle, with each event, club, or roommate and shows a match score. The previews on the homepage are examples until you sign in.',x:['events','clubs','dorms']},
+    {k:/what is|about|trojanmatch|this app|help/i,a:'TrojanMatch is one place to find your people at USC: events worth going to (with a ride there), clubs that fit you, and roommates you will actually like.',x:['events','clubs','dorms']}
+  ];
+  const SUGG=['How do carpools work?','How does club matching work?','How do I edit my profile?','What is dorm matching?','Is my data private?'];
+  function add(role,html,acts){const m=document.createElement('div');m.className='msg '+role;m.innerHTML=html;if(acts&&acts.length){const a=document.createElement('div');a.className='acts';acts.forEach(k=>{const [l,f]=ACT[k];const b=document.createElement('button');b.type='button';b.innerHTML=l+' <i class="ti ti-arrow-right"></i>';b.onclick=()=>{f();if(window.innerWidth<640)close();};a.appendChild(b);});m.appendChild(a);}body.appendChild(m);body.scrollTop=body.scrollHeight;return m;}
+  const esc=t=>t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  function answer(q){
+    if(/^(hi|hey|hello|yo|sup|hii+)\b/i.test(q.trim()))return {a:`Hey${signedName()?' '+esc(signedName()):''}! Fight on. Ask me about events, carpools, clubs, dorms, or your profile.`,x:[]};
+    if(/thank/i.test(q))return {a:'Anytime. Fight on!',x:[]};
+    const hit=KB.find(e=>e.k.test(q));
+    return hit||{a:'I am not sure about that one yet. I can help with events, carpools, messages, clubs, dorms, your profile, and the horse game.',x:['menu']};
+  }
+  const history=[];let aiOn=null,busy=false;
+  const note=document.querySelector('.chat-note');
+  function setMode(on){aiOn=on;$('aiBadge').hidden=!on;const st=$('chatStatus');st.textContent=on?'Gemini AI · understands follow-ups':'Offline mode · quick answers';st.classList.toggle('off',!on);note.textContent=on?'Powered by Gemini. Answers can be wrong, so double-check important info.':'Offline answers. AI is not connected here.';}
+  fetch('api/health',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(h=>setMode(!!(h&&h.ai))).catch(()=>setMode(false));
+  const fmt=t=>esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n+/g,'<br>');
+  function setSugg(list,fu){sugg.innerHTML='';list.forEach(q=>{const b=document.createElement('button');b.type='button';b.textContent=q;if(fu)b.className='fu';b.onclick=()=>ask(q);sugg.appendChild(b);});}
+  function tag(m,ai){const t=document.createElement('div');t.className='msg-tag'+(ai?' ai':'');t.innerHTML=ai?'<i class="ti ti-sparkles"></i>Answered by Gemini':'<i class="ti ti-bolt"></i>Quick answer';m.appendChild(t);}
+  async function typeOut(m,html){const words=html.split(/(\s+)/);m.innerHTML='';const span=document.createElement('span');m.appendChild(span);const c=document.createElement('span');c.className='caret';m.appendChild(c);
+    for(let i=0;i<words.length;i+=2){span.innerHTML=words.slice(0,i+1).join('');body.scrollTop=body.scrollHeight;await new Promise(z=>setTimeout(z,18));}
+    span.innerHTML=html;c.remove();}
+  function profile(){const u=window.tmUser;if(!u)return null;return {firstName:(u.name||'').split(' ')[0],major:u.major||'',gradMonth:u.gradMonth||'',gradYear:u.gradYear||''};}
+  async function ask(q){
+    q=q.trim();if(!q||busy)return;busy=true;add('me',esc(q));inp.value='';
+    const t=add('bot','<span class="typing"><i></i><i></i><i></i></span>');
+    let d=null,limit=false;
+    if(aiOn!==false){
+      try{
+        const res=await fetch('api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q,history,profile:profile()}),signal:AbortSignal.timeout(16000)});
+        if(res.ok)d=await res.json();else if(res.status===429)limit=true;
+      }catch(e){}
+    }
+    if(d&&d.reply){
+      history.push({role:'user',text:q},{role:'model',text:d.reply});history.splice(0,Math.max(0,history.length-8));
+      t.remove();const m=add('bot','');await typeOut(m,fmt(d.reply));
+      const tmp=add('bot','',d.actions||[]);const acts=tmp.querySelector('.acts');if(acts)m.appendChild(acts);tmp.remove();
+      tag(m,true);body.scrollTop=body.scrollHeight;
+      if(d.followups&&d.followups.length)setSugg(d.followups,true);
+    }else{
+      await new Promise(z=>setTimeout(z,450));t.remove();
+      const r=limit?{a:'Whoa, lots of questions! Give me a minute and try again.',x:[]}:answer(q);
+      const m=add('bot',r.a,r.x);tag(m,false);
+    }
+    busy=false;
+  }
+  let greeted=false;
+  function open(){box.hidden=false;fab.classList.add('open');fab.setAttribute('aria-expanded','true');fab.innerHTML='<i class="ti ti-x"></i>';
+    if(!greeted){greeted=true;const n=signedName();add('bot',`Hi${n?' '+esc(n):''}! I'm Traveler, your TrojanMatch guide. Ask me anything about the app.`);}
+    setTimeout(()=>inp.focus(),50);}
+  function close(){box.hidden=true;fab.classList.remove('open');fab.setAttribute('aria-expanded','false');fab.innerHTML='<i class="ti ti-message-chatbot"></i>';}
+  fab.onclick=()=>box.hidden?open():close();
+  $('chatClose').onclick=close;
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!box.hidden)close();});
+  $('chatForm').addEventListener('submit',e=>{e.preventDefault();ask(inp.value);});
+  setSugg(SUGG,false);
 })();
 const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)en.target.classList.add('in');}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));

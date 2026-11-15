@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Finding a Buddy · TrojanMatch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--cardinal:#990000;--cardinal-dark:#6b0000;--gold:#FFCC00;--bg:#fbf7ef;--panel:#fff;--panel-2:#faf6ee;--text:#1f1a16;--text-2:#5e574f;--text-3:#8c847a;--line:rgba(60,30,10,.10);--line-2:rgba(60,30,10,.18);--sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--serif:"Fraunces",Georgia,serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--cardinal);z-index:6}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid rgba(153,0,0,.4);outline-offset:2px}
+h1,h2,h3{font-family:var(--serif);font-weight:800;margin:0;line-height:1.15}
+h2{font-size:clamp(24px,4vw,32px)}h3{font-size:18px}
+.nav{background:var(--cardinal);color:#fff;border-bottom:4px solid var(--gold);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.nav-in{max-width:760px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.burger{width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0}
+.burger span{display:block;width:18px;height:2px;border-radius:2px;background:#fff}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:800;font-size:20px;text-decoration:none}
+.logo .m{width:32px;height:32px;border-radius:9px;background:var(--gold);color:var(--cardinal);display:flex;align-items:center;justify-content:center;font-size:15px}
+.demo{background:var(--panel-2);border-bottom:1px solid var(--line);font-size:12px;color:var(--text-2)}
+.demo>div{max-width:760px;margin:0 auto;padding:6px 16px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.demo button{background:var(--panel);border:1px solid var(--line-2);border-radius:999px;padding:2px 10px;font-size:12px}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 70px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px;margin:0 0 12px}
+.card.hl{border:2px solid var(--cardinal)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.sp{justify-content:space-between}
+.mute{color:var(--text-2);font-size:13px}
+.chip{display:inline-block;background:var(--panel-2);border:1px solid var(--line-2);border-radius:999px;padding:2px 10px;font-size:12px;color:var(--text-2)}
+.chip.m{background:rgba(255,204,0,.28);border-color:transparent;color:var(--cardinal);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px;border:1.5px solid var(--cardinal);text-decoration:none}
+.btn-p{background:var(--cardinal);color:#fff}.btn-p:hover{background:var(--cardinal-dark)}
+.btn-s{background:transparent;color:var(--cardinal)}.btn-s:hover{background:rgba(153,0,0,.06)}
+.btn.sm{padding:6px 13px;font-size:13px}.btn:disabled{opacity:.45;cursor:default}
+input[type=text],input[type=number],input[type=datetime-local],select{width:100%;background:var(--panel);border:1px solid var(--line-2);border-radius:12px;padding:10px 12px}
+.ai{display:flex;gap:8px;margin:14px 0}
+.tg{border:1px solid var(--line-2);background:var(--panel);border-radius:999px;padding:5px 13px;font-size:13px;text-decoration:none;display:inline-block}.tg.on{background:var(--cardinal);color:#fff;border-color:var(--cardinal)}
+.pill{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.fl,.fm{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:10px 0}
+.fm label{font-size:12px;color:var(--text-2);display:block;margin-bottom:2px}.full{grid-column:1/-1}
+.eyebrow{display:inline-flex;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cardinal);background:rgba(255,204,0,.28);padding:3px 10px;border-radius:999px}
+.scrim{position:fixed;inset:0;background:rgba(40,10,0,.45);z-index:20}
+.menu{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:12px;width:min(420px,calc(100vw - 24px));max-height:calc(100vh - 24px);overflow:auto;background:var(--panel);border-radius:22px;box-shadow:0 24px 60px rgba(40,10,0,.3);z-index:21}
+.mh{background:var(--cardinal);color:#fff;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:4px solid var(--gold)}
+.mh small{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}.mh b{font-family:var(--serif);font-size:22px}
+.mx{background:rgba(255,255,255,.12);border:0;color:#fff;width:34px;height:34px;border-radius:50%;font-size:18px}
+.mi{display:flex;align-items:center;gap:12px;padding:13px 18px;border:0;border-bottom:1px solid var(--line);background:none;width:100%;text-align:left;text-decoration:none}
+.mi:hover,.mi.on{background:var(--panel-2)}
+.mi .ic{width:38px;height:38px;border-radius:12px;background:var(--cardinal);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:17px;flex:none}
+.mi .tx{flex:1;display:flex;flex-direction:column}.mi b{font-weight:600;font-size:15px}.mi small{color:var(--text-2);font-size:12px}
+.mi.sub{background:var(--panel-2);padding-left:44px}.mi.sub .ic{width:30px;height:30px;font-size:14px;background:rgba(255,204,0,.35);color:var(--cardinal)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px}.stat b{font:800 28px var(--serif);color:var(--cardinal);display:block}
+.bar{height:8px;background:var(--line);border-radius:6px;overflow:hidden;margin:4px 0 10px}.bar i{display:block;height:100%;background:var(--cardinal)}.bar i.low{background:var(--gold)}
+.sw{position:relative;width:44px;height:26px;background:var(--line-2);border-radius:99px;border:0;flex:none}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .15s}
+.sw.on{background:var(--cardinal)}.sw.on::after{left:21px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:14px;z-index:40}
+.safe{background:rgba(255,204,0,.22);border-radius:14px;padding:10px 14px;font-size:13px}
+.back{background:none;border:0;color:var(--cardinal);font-weight:700;padding:0;margin-bottom:12px}
+.ice{border-left:3px solid var(--gold);padding:2px 12px;margin:10px 0}
+.bub{max-width:82%;padding:8px 12px;border-radius:16px;margin:6px 0;background:var(--panel);border:1px solid var(--line)}
+.bub.me{margin-left:auto;background:var(--cardinal);color:#fff;border-color:var(--cardinal)}.bub small{display:block;opacity:.75;font-size:11px}
+.login{display:grid;gap:8px;margin-top:14px}.login button{text-align:left;background:var(--panel);border:1px solid var(--line-2);border-radius:14px;padding:11px 14px}
+.exp{font-size:12px;color:var(--text-3)}
+.calm{display:inline-flex;gap:6px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const DAY=864e5,HR=36e5,pad=n=>String(n).padStart(2,"0");
+let off=0;const now=()=>Date.now()+off;
+const ts=(d,h)=>{const m=new Date(Date.now());m.setHours(0,0,0,0);return m.getTime()+d*DAY+h*HR};
+const fmt=ms=>{const d=new Date(ms);return d.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"})+" · "+d.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"})};
+const left=ms=>{const f=ms-now();if(f<=0)return"expired";const d=Math.floor(f/DAY),h=Math.floor(f%DAY/HR),m=Math.floor(f%HR/6e4);return d?d+"d "+h+"h":h?h+"h "+m+"m":m+"m"};
+const locIn=ms=>{const d=new Date(ms);return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"T"+pad(d.getHours())+":"+pad(d.getMinutes())};
+
+/* ---------- MOCK DATA. In production, replace with the real EngageSC API / USC SSO. ---------- */
+const S=[
+{id:1,name:"Maya R.",year:"First-year",major:"Biology",area:"Parkside",com:false,orgs:[1,3]},
+{id:2,name:"Jordan T.",year:"Transfer",major:"Business",area:"Culver City",com:true,orgs:[1,4]},
+{id:3,name:"Priya S.",year:"Sophomore",major:"CS",area:"Fluor Tower",com:false,orgs:[2,4]},
+{id:4,name:"Diego M.",year:"First-year",major:"Cinema",area:"New North",com:false,orgs:[1,5]},
+{id:5,name:"Aiko L.",year:"Transfer",major:"Design",area:"Koreatown",com:true,orgs:[2,5]},
+{id:6,name:"Sam K.",year:"Junior",major:"Economics",area:"Jefferson Blvd",com:false,orgs:[4]},
+{id:7,name:"Nia W.",year:"First-year",major:"Psychology",area:"Inglewood",com:true,orgs:[3,2]},
+{id:8,name:"Ethan B.",year:"Senior",major:"Public Policy",area:"Adams Blvd",com:false,orgs:[6]}];
+const O={1:"Trojan Hiking Club",2:"Dance Collective",3:"Pre-Med Society",4:"Entrepreneurship Club",5:"Film Society",6:"Student Policy Forum",7:"Welcome Committee"};
+const seedEvents=()=>[
+{id:1,t:"Welcome mixer for new Trojans",o:7,pub:1,s:ts(1,17),at:"Tommy Trojan lawn",tags:["social","low-key"],desc:"Meet other new students over snacks."},
+{id:2,t:"Coffee and policy chat",o:6,pub:1,s:ts(1,16),at:"Ground Zero Cafe",tags:["career","low-key","food"],desc:"Casual conversation about campus policy."},
+{id:3,t:"Founders pitch night",o:4,pub:1,s:ts(2,18.5),at:"Marshall Building",tags:["career"],desc:"Student startups pitch to alumni."},
+{id:4,t:"Open dance showcase",o:2,pub:1,s:ts(3,19),at:"Bovard Auditorium",tags:["arts","music"],desc:"Student dance groups perform."},
+{id:5,t:"Trojan basketball watch party",o:7,pub:1,s:ts(3,19.5),at:"Lyon Center",tags:["sports","social","food"],desc:"Watch the game with free pizza."},
+{id:6,t:"Outdoor film screening",o:5,pub:1,s:ts(5,20),at:"Hahn Plaza",tags:["arts","low-key","social"],desc:"A movie under the stars."},
+{id:7,t:"Hiking Club trail-planning night",o:1,pub:0,s:ts(4,18),at:"Leavey Library",tags:["outdoors","social"],desc:"Members plan the next hikes."},
+{id:8,t:"MCAT study kickoff",o:3,pub:0,s:ts(6,18),at:"Leavey Library",tags:["academic"],desc:"Members form study groups."}];
+const seedPosts=()=>{const e=seedEventsRef;const st=id=>e.find(x=>x.id===id).s;return[
+{id:1,ev:1,by:4,area:"New North",time:"Arriving around 5:00 PM",why:"I don’t know many people yet and want to meet a few.",note:"",exp:st(1)},
+{id:2,ev:1,by:2,area:"Culver City",time:"Heading over around 4:15 PM",why:"I transferred this fall and still feel new here.",note:"I commute, so I’ll park at the structure.",exp:st(1)},
+{id:3,ev:4,by:5,area:"Koreatown",time:"Arriving 6:45 PM",why:"I love dance but have never been to a showcase.",note:"",exp:st(4)},
+{id:4,ev:4,by:7,area:"Inglewood",time:"Arriving 6:30 PM",why:"My roommate is out of town.",note:"",exp:st(4)},
+{id:5,ev:3,by:3,area:"Fluor Tower",time:"Walking over at 6:15 PM",why:"Want to meet people who like building things.",note:"",exp:st(3)},
+{id:6,ev:6,by:5,area:"Koreatown",time:"Arriving 7:45 PM",why:"Bringing a blanket, happy to share.",note:"",exp:st(6)},
+{id:7,ev:7,by:2,area:"Culver City",time:"Arriving 5:50 PM",why:"First meeting with the club.",note:"",exp:st(7)},
+{id:8,ev:2,by:8,area:"Adams Blvd",time:"Arriving 3:50 PM",why:"I want to talk with people outside my major.",note:"",exp:st(2)}]};
+const seedRides=()=>[
+{id:1,t:"Uber to LAX for break",cat:"Airport",dest:"LAX Airport",s:ts(9,9),from:"Tommy Trojan",mode:"Rideshare split",spots:4,mem:[2,5],host:2,cost:45,note:"Room for two carry-ons."},
+{id:2,t:"Uber to Burbank (BUR)",cat:"Airport",dest:"Burbank Airport",s:ts(8,6),from:"New North",mode:"Rideshare split",spots:3,mem:[4],host:4,cost:60,note:"Early flight, splitting the fare."},
+{id:3,t:"Rideshare to the Kia Forum concert",cat:"Concert",dest:"Kia Forum, Inglewood",s:ts(5,18),from:"Jefferson Blvd gate",mode:"Rideshare split",spots:4,mem:[3,7],host:3,cost:36,note:"Going and coming back together, safer after dark."},
+{id:4,t:"Road trip to Joshua Tree",cat:"Road trip",dest:"Joshua Tree National Park",s:ts(7,8),from:"Parking Structure",mode:"Carpool",spots:4,mem:[1],host:1,cost:60,note:"Splitting gas. Back Sunday night."},
+{id:5,t:"Beach day in Santa Monica",cat:"Outing",dest:"Santa Monica Pier",s:ts(3,10),from:"Cardinal Gardens",mode:"Carpool",spots:4,mem:[8],host:8,cost:10,note:"Parking split four ways."},
+{id:6,t:"Train to San Diego",cat:"Road trip",dest:"San Diego",s:ts(6,15),from:"Union Station",mode:"Transit",spots:5,mem:[6],host:6,cost:0,note:"Everyone buys their own ticket and sits together."}];
+/* Sample listings, not live data. The optional /api can later swap in a live events API. */
+const seedLA=()=>[
+{id:101,t:"Arena concert night",venue:"Kia Forum, Inglewood",cat:"Concert",s:ts(5,19),tags:["music"],desc:"Sample listing: an evening concert."},
+{id:102,t:"Basketball at Crypto.com Arena",venue:"Crypto.com Arena, Downtown LA",cat:"Sports",s:ts(4,19.5),tags:["sports"],desc:"Sample listing: pro basketball game."},
+{id:103,t:"Evening at the Hollywood Bowl",venue:"Hollywood Bowl",cat:"Concert",s:ts(8,19),tags:["music","outdoors"],desc:"Sample listing: outdoor orchestra night."},
+{id:104,t:"Sunset hike at Griffith Park",venue:"Griffith Observatory",cat:"Outdoors",s:ts(3,16.5),tags:["outdoors","low-key"],desc:"Sample listing: easy sunset hike with city views."},
+{id:105,t:"Santa Monica beach day",venue:"Santa Monica State Beach",cat:"Outdoors",s:ts(2,10),tags:["outdoors","low-key","food"],desc:"Sample listing: a day at the beach."},
+{id:106,t:"Venice Boardwalk street fair",venue:"Venice Beach",cat:"Social",s:ts(6,12),tags:["social","food","arts"],desc:"Sample listing: street food and live performers."},
+{id:107,t:"Baseball at Dodger Stadium",venue:"Dodger Stadium",cat:"Sports",s:ts(7,18),tags:["sports","food"],desc:"Sample listing: a night game."},
+{id:108,t:"Football at the Rose Bowl",venue:"Rose Bowl, Pasadena",cat:"Sports",s:ts(9,13),tags:["sports","social"],desc:"Sample listing: afternoon football."},
+{id:109,t:"Night market in Chinatown",venue:"Chinatown, Los Angeles",cat:"Social",s:ts(5,18),tags:["food","social","low-key"],desc:"Sample listing: night market with food stalls."},
+{id:110,t:"Downtown art walk",venue:"Downtown LA Arts District",cat:"Arts",s:ts(4,17),tags:["arts","low-key"],desc:"Sample listing: gallery walk."}];
+let seedEventsRef=seedEvents();
+let E=seedEventsRef,P=seedPosts(),R=seedRides(),LA=seedLA(),msgs={};
+const ICE=["What’s the best thing you’ve eaten near campus this month?","Which class has surprised you most this semester?","If you had a free Saturday in LA, where would you go first?"];
+const REPL=["Sounds good to me!","Works for me, see you there.","I’ll be a few minutes early.","Thanks for organizing!"];
+const MODES=["Rideshare split","Carpool","Transit"],CATS=["Airport","Concert","Road trip","Outing"];
+const st={me:null,admin:false,tab:"feed",ev:null,pf:false,th:null,menu:false,sub:undefined,q:"",qr:null,lq:"",lr:null,busy:"",cal:null,form:false,pre:null,rf:{},carpool:true,aiOn:true,groups:{},reports:[{id:1,txt:"Spam message in chat (Aiko L.)"},{id:2,txt:"Off-topic post (Sam K.)"}],pilot:"",cleaned:0,expired:[]};
+const nm=id=>S.find(s=>s.id===id).name.split(" ")[0];
+const canSee=(s,e)=>e.pub||s.orgs.includes(e.o);
+const vis=s=>E.filter(e=>canSee(s,e)&&e.s>now()).sort((a,b)=>a.s-b.s);
+function toast(m){const d=document.createElement("div");d.className="toast";d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),1900)}
+
+/* ---------- post expiry ---------- */
+function sweep(){const t=now(),keep=[];P.forEach(p=>{if(p.exp>t)keep.push(p);else{st.cleaned++;if(st.me&&p.by===st.me.id)st.expired.push(p)}});P=keep;const r=R.filter(x=>x.s+DAY>t);st.cleaned+=R.length-r.length;R=r}
+setInterval(()=>{if(st.me||st.admin)render()},60000);
+function clock(ms){off=ms===0?0:off+ms;toast(ms===0?"Clock reset":"Demo clock: "+fmt(now()));render()}
+
+/* ---------- calendar export ---------- */
+const CAL={};
+const utc=ms=>{const d=new Date(ms);return d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+"T"+pad(d.getUTCHours())+pad(d.getUTCMinutes())+"00Z"};
+const icsEsc=s=>String(s||"").replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\r?\n/g,"\\n");
+const fold=l=>{let o="";while(l.length>75){o+=l.slice(0,75)+"\r\n ";l=l.slice(75)}return o+l};
+function ics(o){return["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//TrojanMatch//Finding a Buddy//EN","CALSCALE:GREGORIAN","BEGIN:VEVENT","UID:"+o.uid+"@trojanmatch","DTSTAMP:"+utc(Date.now()),"DTSTART:"+utc(o.s),"DTEND:"+utc(o.e),"SUMMARY:"+icsEsc(o.t),"LOCATION:"+icsEsc(o.loc),"DESCRIPTION:"+icsEsc(o.desc),"BEGIN:VALARM","ACTION:DISPLAY","DESCRIPTION:Reminder","TRIGGER:-PT1H","END:VALARM","END:VEVENT","END:VCALENDAR"].map(fold).join("\r\n")+"\r\n"}
+function dlIcs(k){const o=CAL[k],b=new Blob([ics(o)],{type:"text/calendar;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=o.t.replace(/[^a-z0-9]+/gi,"-").toLowerCase()+".ics";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+const gUrl=o=>"https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(o.t)+"&dates="+utc(o.s)+"/"+utc(o.e)+"&details="+encodeURIComponent(o.desc||"")+"&location="+encodeURIComponent(o.loc||"");
+const oUrl=o=>"https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&subject="+encodeURIComponent(o.t)+"&startdt="+encodeURIComponent(new Date(o.s).toISOString())+"&enddt="+encodeURIComponent(new Date(o.e).toISOString())+"&body="+encodeURIComponent(o.desc||"")+"&location="+encodeURIComponent(o.loc||"");
+function calBtn(k,o){CAL[k]=o;return `<button class="btn btn-s sm" onclick="st.cal=st.cal==='${k}'?null:'${k}';render()">Add to calendar</button>`+(st.cal===k?`<span class="calm"><button class="tg" onclick="dlIcs('${k}')">.ics file</button><a class="tg" target="_blank" rel="noopener" href="${esc(gUrl(o))}">Google</a><a class="tg" target="_blank" rel="noopener" href="${esc(oUrl(o))}">Outlook</a></span>`:"")}
+const evCal=e=>({uid:"e"+e.id,t:e.t,s:e.s,e:e.s+1.5*HR,loc:e.at,desc:"Hosted by "+O[e.o]+". "+e.desc});
+const rideCal=r=>({uid:"r"+r.id,t:r.t,s:r.s,e:r.s+2*HR,loc:r.from,desc:"Meet at "+r.from+". Going to "+r.dest+". "+r.mode+"."});
+
+/* ---------- AI search (calls /api/search, falls back to local matching) ---------- */
+const STOP=new Set("the and for with that this who are can want something some where like looking good place thing".split(" "));
+const VIBE={"low-key":"low-key",chill:"low-key",quiet:"low-key",relaxed:"low-key",social:"social","meet people":"social",friends:"social",music:"music",concert:"music",dance:"arts",art:"arts",film:"arts",movie:"arts",career:"career",startup:"career",networking:"career",study:"academic",hike:"outdoors",hiking:"outdoors",outdoor:"outdoors",beach:"outdoors",sports:"sports",game:"sports",basketball:"sports",baseball:"sports",food:"food",coffee:"food",pizza:"food"};
+const DN=[["sun(day)?","Sunday"],["mon(day)?","Monday"],["tue(s|sday)?","Tuesday"],["wed(nesday)?","Wednesday"],["thu(rs|rsday)?","Thursday"],["fri(day)?","Friday"],["sat(urday)?","Saturday"]];
+function local(q,items){const s=q.toLowerCase(),chips=[],tags=new Set(),wd=new Date(now()).getDay();let days=null;
+ if(/\b(today|tonight)\b/.test(s)){days=[wd];chips.push("today")}else if(/\btomorrow\b/.test(s)){days=[(wd+1)%7];chips.push("tomorrow")}else if(/\bweekend\b/.test(s)){days=[0,6];chips.push("this weekend")}else DN.forEach(([r,n],i)=>{if(new RegExp("\\b"+r+"\\b").test(s)){days=[i];chips.push(n)}});
+ Object.keys(VIBE).forEach(k=>{if(s.includes(k)){tags.add(VIBE[k]);chips.push(VIBE[k])}});
+ const words=s.split(/[^a-z]+/).filter(w=>w.length>2&&!STOP.has(w)),out=[];
+ items.forEach(i=>{if(days&&!days.includes(new Date(i.s).getDay()))return;let sc=days?1:0;(i.tags||[]).forEach(t=>{if(tags.has(t))sc+=2});const hay=(i.t+" "+(i.at||i.venue||"")+" "+(i.desc||"")).toLowerCase();words.forEach(w=>{if(hay.includes(w))sc++});if(sc>0)out.push([i.id,sc,i.s])});
+ out.sort((a,b)=>b[1]-a[1]||a[2]-b[2]);return{ids:out.map(x=>x[0]),chips:[...new Set(chips)]}}
+async function runSearch(kind,q,items){
+ if(st.aiOn){try{const c=new AbortController(),tm=setTimeout(()=>c.abort(),7000);
+  const r=await fetch("/api/search",{method:"POST",headers:{"Content-Type":"application/json"},signal:c.signal,body:JSON.stringify({kind,query:q,today:new Date(now()).toString(),items:items.map(i=>({id:i.id,title:i.t,tags:i.tags,when:fmt(i.s),place:i.at||i.venue,desc:i.desc}))})});
+  clearTimeout(tm);if(!r.ok)throw 0;const j=await r.json(),ok=new Set(items.map(i=>i.id));if(!Array.isArray(j.ids))throw 0;
+  return{ids:j.ids.filter(i=>ok.has(i)),chips:j.understood||[],src:"AI"}}catch(e){}}
+ return{...local(q,items),src:"local"}}
+async function doSearch(kind){const inp=$(kind==="campus"?"q":"lq");const q=inp.value;if(kind==="campus")st.q=q;else st.lq=q;
+ if(!q.trim()){if(kind==="campus")st.qr=null;else st.lr=null;render();return}
+ st.busy=kind;render();const items=kind==="campus"?vis(st.me):LA.filter(x=>x.s>now());const res=await runSearch(kind,q,items);
+ if(kind==="campus")st.qr=res;else st.lr=res;st.busy="";render()}
+const searchBar=(k,ph)=>`<div class="ai"><input type="text" id="${k==="campus"?"q":"lq"}" aria-label="${ph}" placeholder="${ph}" value="${esc(k==="campus"?st.q:st.lq)}" onkeydown="if(event.key==='Enter')doSearch('${k}')"><button class="btn btn-p" onclick="doSearch('${k}')">${st.busy===k?"Searching…":"Search"}</button></div>`;
+const understood=r=>r?`<div class="row" style="margin-bottom:12px"><span class="mute">Understood as:</span>${r.chips.length?r.chips.map(c=>`<span class="chip m">${esc(c)}</span>`).join(""):'<span class="mute">your keywords</span>'}<span class="exp">${r.src==="AI"?"AI search":"Local search (AI offline)"}</span></div>`:"";
+
+/* ---------- shell ---------- */
+function login(){return `<nav class="nav"><div class="nav-in"><a class="logo" href="../index.html"><span class="m">TM</span>TrojanMatch</a></div></nav><div class="wrap"><span class="eyebrow">Finding a buddy</span><h2 style="margin:10px 0 6px">Never go to an event alone.</h2><p class="mute">Prototype with mock EngageSC data. Pick a demo student to sign in with a USC account.</p><div class="login">${S.map(s=>`<button onclick="signin(${s.id})"><b>${s.name}</b> <span class="mute">${s.year}, ${s.major}${s.com?", commuter":""}</span></button>`).join("")}<button onclick="signin(0)"><b>USG Admin</b> <span class="mute">Student Government dashboard</span></button></div></div>`}
+function signin(id){st.groups={};msgs={};st.th=null;st.menu=false;st.ev=null;st.pf=false;st.form=false;st.cal=null;st.expired=[];if(id===0){st.admin=true;st.me=null;st.tab="admin"}else{st.admin=false;st.me=S.find(s=>s.id===id);st.tab="feed"}render()}
+function reset(){seedEventsRef=seedEvents();E=seedEventsRef;P=seedPosts();R=seedRides();LA=seedLA();msgs={};off=0;Object.assign(st,{groups:{},ev:null,pf:false,form:false,th:null,menu:false,q:"",qr:null,lq:"",lr:null,cal:null,carpool:true,aiOn:true,pilot:"",cleaned:0,expired:[],reports:[{id:1,txt:"Spam message in chat (Aiko L.)"},{id:2,txt:"Off-topic post (Sam K.)"}]});render();toast("Demo reset")}
+function nav(t){st.tab=t;st.ev=null;st.th=null;st.menu=false;st.form=false;st.pf=false;st.cal=null;if(t==="rides")st.rf={};render();window.scrollTo(0,0)}
+function header(){return `<nav class="nav"><div class="nav-in"><button class="burger" aria-label="Open menu" onclick="st.menu=true;render()"><span></span><span></span><span></span></button><a class="logo" href="../index.html"><span class="m">TM</span>TrojanMatch</a></div></nav>
+<div class="demo"><div><b>Demo</b> ${st.admin?"USG Admin":esc(st.me.name)} · now ${fmt(now())}<button onclick="st.me=null;st.admin=false;render()">Switch user</button><button onclick="reset()">Reset demo</button><button onclick="clock(6*HR)">+6 hours</button><button onclick="clock(DAY)">+1 day</button><button onclick="clock(0)">Reset clock</button></div></div>`}
+const pills=()=>`<div class="pill">${[["feed","Events"],["rides","Rides"],["groups","Messages"]].map(([k,l])=>`<button class="tg ${st.tab===k?"on":""}" onclick="nav('${k}')">${l}</button>`).join("")}</div>`;
+function menu(){const inSec=["feed","rides","groups"].includes(st.tab),open=st.sub===undefined?inSec:st.sub,row=(h,i,t,s)=>`<a class="mi" href="${h}"><span class="ic">${i}</span><span class="tx"><b>${t}</b><small>${s}</small></span></a>`;
+ return `<div class="scrim" onclick="st.menu=false;render()"></div><aside class="menu" aria-label="Site menu"><div class="mh"><div><small>TrojanMatch</small><b>Choose your match</b></div><button class="mx" aria-label="Close menu" onclick="st.menu=false;render()">×</button></div>
+ ${row("../index.html#events","◆","Event matching","Events picked for your interests")}${row("../index.html#clubs","●","Club matching","Clubs that fit your goals")}${row("../index.html#dorms","■","Dorm matching","Roommates who match your lifestyle")}
+ ${st.admin?`<button class="mi on" onclick="st.menu=false;render()"><span class="ic">♥</span><span class="tx"><b>Finding a buddy</b><small>USG dashboard</small></span></button>`:`<div class="row" style="gap:0;flex-wrap:nowrap"><button class="mi ${st.tab==="feed"?"on":""}" onclick="nav('feed')"><span class="ic">♥</span><span class="tx"><b>Finding a buddy</b><small>Go to campus events with someone</small></span></button><button class="mi" style="width:56px;justify-content:center" aria-label="Show or hide sub tabs" aria-expanded="${open}" onclick="st.sub=!${open};render()">${open?"▾":"▸"}</button></div>
+ ${open?`<button class="mi sub ${st.tab==="rides"?"on":""}" onclick="nav('rides')"><span class="ic">➜</span><span class="tx"><b>Ride buddies</b><small>Split rides to airports, concerts, trips</small></span></button><button class="mi sub ${st.tab==="groups"?"on":""}" onclick="nav('groups')"><span class="ic">✉</span><span class="tx"><b>Messages</b><small>Your group chats</small></span></button>`:""}`}</aside>`}
+
+/* ---------- events ---------- */
+function evCard(e){const me=st.me,n=P.filter(p=>p.ev===e.id&&p.by!==me.id&&p.exp>now()).length,mine=P.some(p=>p.ev===e.id&&p.by===me.id);
+ return `<div class="card"><div class="row sp"><h3>${esc(e.t)}</h3><span class="chip ${e.pub?"":"m"}">${e.pub?"Public":"Members only"}</span></div><div class="mute">${O[e.o]} · ${fmt(e.s)} · ${esc(e.at)}</div>
+ <div class="row" style="margin-top:12px"><button class="btn btn-p sm" onclick="openEv(${e.id},0)">Find a buddy${n?" ("+n+" open)":""}</button><button class="btn btn-s sm" onclick="openEv(${e.id},1)">${mine?"Edit my post":"I’m looking for a buddy"}</button>${calBtn("e"+e.id,evCal(e))}</div></div>`}
+function feed(){const all=vis(st.me),L=st.qr?st.qr.ids.map(id=>all.find(e=>e.id===id)).filter(Boolean):all;
+ return `<h2>Events</h2><p class="mute" style="margin-top:6px">On-campus events you can see through EngageSC: public events plus events from your orgs.</p>
+ ${searchBar("campus","Try: something low-key this weekend where I can meet people")}${understood(st.qr)}
+ ${L.length?L.map(evCard).join(""):'<div class="card">No events match that yet. Try a topic like film, career, or a day like Friday.</div>'}
+ ${st.expired.length?`<h3 style="margin:20px 0 10px">Your expired posts</h3>${st.expired.map(p=>{const e=E.find(x=>x.id===p.ev);return `<div class="card"><b>${esc(e.t)}</b><div class="mute">Expired. ${e.s>now()?"The event hasn’t started, so you can repost.":"The event has started."}</div><button class="btn btn-s sm" style="margin-top:8px" ${e.s>now()?"":"disabled"} onclick="repost(${p.id})">Repost</button></div>`}).join("")}`:""}`}
+function openEv(id,pf){st.ev=id;st.pf=!!pf;st.cal=null;render();window.scrollTo(0,0)}
+function repost(id){const p=st.expired.find(x=>x.id===id),e=E.find(x=>x.id===p.ev);st.expired=st.expired.filter(x=>x!==p);P.unshift({...p,exp:e.s});toast("Reposted until the event starts");render()}
+function postForm(e,m){const me=st.me;return `<div class="card hl"><h3>${m?"Edit your post":"Let others know you’re open"}</h3><p class="mute" style="margin:4px 0 6px">Others see your name, year, major, and these details.</p>
+ <div class="fm"><div><label for="p_area">Where you live</label><input type="text" id="p_area" value="${esc(m?m.area:me.area)}"></div><div><label for="p_time">When you plan to go</label><input type="text" id="p_time" placeholder="Arriving around ${new Date(e.s-9e5).toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"})}" value="${m?esc(m.time):""}"></div>
+ <div class="full"><label for="p_why">Why you want to go</label><input type="text" id="p_why" placeholder="New here and want to meet people" value="${m?esc(m.why):""}"></div><div class="full"><label for="p_note">Anything else</label><input type="text" id="p_note" placeholder="Optional" value="${m?esc(m.note):""}"></div>
+ <div class="full"><label for="p_keep">Keep my post up</label><select id="p_keep"><option value="start">Until the event starts</option><option value="3d">For 3 days</option><option value="24h">For 24 hours</option></select></div></div>
+ <div class="row"><button class="btn btn-p" onclick="savePost(${e.id})">${m?"Save changes":"Post to this event"}</button><button class="btn btn-s" onclick="st.pf=false;render()">Cancel</button></div></div>`}
+function savePost(eid){const v=i=>$(i).value.trim(),e=E.find(x=>x.id===eid),k=$("p_keep").value;P=P.filter(x=>!(x.ev===eid&&x.by===st.me.id));
+ P.unshift({id:Date.now(),ev:eid,by:st.me.id,area:v("p_area")||st.me.area,time:v("p_time"),why:v("p_why"),note:v("p_note"),exp:k==="3d"?Math.min(e.s,now()+3*DAY):k==="24h"?Math.min(e.s,now()+DAY):e.s});st.pf=false;toast("You’re listed as looking for a buddy");render()}
+function wdPost(eid){P=P.filter(x=>!(x.ev===eid&&x.by===st.me.id));toast("Post withdrawn");render()}
+function connect(eid,sid){const g=st.groups[eid]||(st.groups[eid]=[]);if(g.length>=3){toast("Groups have up to 4 people");return}g.push(sid);toast("You’re going together. Say hi in the group chat!");render()}
+function groupCard(e,g){const all=[st.me.id,...g],o={uid:"g"+e.id,t:e.t+" (with buddies)",s:e.s,e:e.s+1.5*HR,loc:e.at,desc:"Group: "+all.map(nm).join(", ")+". Meet at the entrance of "+e.at+", 10 minutes before it starts."};
+ return `<div class="card hl"><h3>Your group (${all.length})</h3><div class="mute">${all.map(nm).join(", ")}</div><div class="ice"><b>Icebreaker:</b> ${ICE[(e.id+g.length)%3]}</div><p style="margin:6px 0 12px">Suggested meetup: the entrance at ${esc(e.at)}, 10 minutes before ${new Date(e.s).toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"})}.</p><div class="row"><button class="btn btn-p sm" onclick="openTh('e${e.id}')">Open group chat</button>${calBtn("g"+e.id,o)}</div></div>`}
+function eventView(){const e=E.find(x=>x.id===st.ev),g=st.groups[e.id]||[],mine=P.find(p=>p.ev===e.id&&p.by===st.me.id),others=P.filter(p=>p.ev===e.id&&p.by!==st.me.id&&p.exp>now());
+ return `<button class="back" onclick="st.ev=null;st.pf=false;render()">← Back to events</button>
+ <div class="card"><div class="row sp"><h3>${esc(e.t)}</h3><span class="chip ${e.pub?"":"m"}">${e.pub?"Public":"Members only"}</span></div><div class="mute">${O[e.o]} · ${fmt(e.s)} · ${esc(e.at)}</div><div class="row" style="margin-top:10px">${calBtn("e"+e.id,evCal(e))}</div></div>
+ ${g.length?groupCard(e,g):""}
+ ${st.pf?postForm(e,mine):mine?`<div class="card"><b>You’re listed as looking for a buddy.</b><div class="mute">${esc(mine.time||"No time added")} · ${esc(mine.area)} · <span class="exp">expires in ${left(mine.exp)}</span></div><div class="row" style="margin-top:10px"><button class="btn btn-s sm" onclick="st.pf=true;render()">Edit post</button><button class="btn btn-s sm" onclick="wdPost(${e.id})">Withdraw</button></div></div>`:`<button class="btn btn-p" style="margin-bottom:6px" onclick="st.pf=true;render()">I’m looking for a buddy</button>`}
+ <h3 style="margin:20px 0 10px">Who’s open (${others.length})</h3>
+ ${others.length?others.map(p=>{const s=S.find(x=>x.id===p.by),inG=g.includes(s.id);return `<div class="card"><div class="row sp"><div><b>${s.name}</b> <span class="mute">${s.year}, ${s.major}</span></div><button class="btn ${inG?"btn-s":"btn-p"} sm" ${inG?"disabled":""} onclick="connect(${e.id},${s.id})">${inG?"In your group":"Go together"}</button></div>
+ <div class="row" style="margin:8px 0 4px"><span class="chip">Lives: ${esc(p.area)}</span>${p.time?`<span class="chip">${esc(p.time)}</span>`:""}<span class="exp">expires in ${left(p.exp)}</span></div>${p.why?`<p style="margin:6px 0 0">${esc(p.why)}</p>`:""}${p.note?`<p class="mute" style="margin:4px 0 0">${esc(p.note)}</p>`:""}</div>`}).join(""):'<div class="card">No one has posted for this event yet. Be the first with the button above.</div>'}
+ <p class="safe">Groups only, no payments. Report or block anyone from the group chat.</p>`}
+
+/* ---------- rides (off campus) ---------- */
+function setF(k,v){if(v==="")delete st.rf[k];else st.rf[k]=v;render()}
+function togF(k){if(st.rf[k])delete st.rf[k];else st.rf[k]=1;render()}
+function prefill(id){const x=LA.find(l=>l.id===id);st.pre={t:"Ride to "+x.t,cat:["Concert","Sports","Arts","Social"].includes(x.cat)&&x.cat==="Concert"?"Concert":"Outing",dest:x.venue,s:x.s-2*HR};st.form=true;render();window.scrollTo(0,0)}
+function joinR(id){const r=R.find(x=>x.id===id);if(r.mem.length<r.spots){r.mem.push(st.me.id);toast("You joined this ride");render()}}
+function leave(id){const r=R.find(x=>x.id===id);r.mem=r.mem.filter(x=>x!==st.me.id);toast("You left the ride");render()}
+function delRide(id){R=R.filter(x=>x.id!==id);toast("Ride cancelled");render()}
+function mkRide(){const g=i=>$(i).value,t=g("n_t").trim(),s=new Date(g("n_dt")).getTime();if(!t||isNaN(s)){toast("Add a title and a departure time");return}
+ R.push({id:Date.now(),t,cat:g("n_c"),dest:g("n_d").trim()||"To be decided",s,from:g("n_f").trim()||"Tommy Trojan",mode:g("n_m"),spots:+g("n_s"),mem:[st.me.id],host:st.me.id,cost:+g("n_$")||0,note:g("n_n").trim()});st.form=false;st.pre=null;st.rf={};toast("Ride posted");render()}
+function rideCard(r){const me=st.me,left_=r.spots-r.mem.length,joined=r.mem.includes(me.id);
+ return `<div class="card"><div class="row sp"><h3>${esc(r.t)}</h3><span class="chip">${r.mode}</span></div><div class="mute">${fmt(r.s)} · Meet at ${esc(r.from)}</div><div class="mute">To ${esc(r.dest)} · ${r.cat} · <span class="exp">departs in ${left(r.s)}</span></div>${r.note?`<p style="margin:6px 0">${esc(r.note)}</p>`:""}
+ <div class="row" style="margin:8px 0">${r.mem.map(id=>`<span class="chip">${nm(id)}${id===r.host?" (host)":""}</span>`).join("")}<span class="mute">${left_>0?left_+" of "+r.spots+" spots open":"Full"}</span></div>
+ ${r.cost?`<div class="mute">Estimated ${r.mode==="Rideshare split"?"fare":"gas and parking"}: $${r.cost} total, about $${Math.ceil(r.cost/r.spots)} each when full. Settle up outside the app.</div>`:""}
+ <div class="row" style="margin-top:10px">${joined?(r.host===me.id?`<button class="btn btn-s sm" onclick="delRide(${r.id})">Cancel ride</button>`:`<button class="btn btn-s sm" onclick="leave(${r.id})">Leave ride</button>`):`<button class="btn btn-p sm" ${left_<1?"disabled":""} onclick="joinR(${r.id})">${left_<1?"Full":"Join this ride"}</button>`}<button class="btn btn-s sm" ${joined?"":"disabled"} onclick="openTh('r${r.id}')">Message group</button>${calBtn("r"+r.id,rideCal(r))}<a href="#" class="mute" onclick="toast('Report sent to USG');return false">Report</a></div></div>`}
+function laCard(x){return `<div class="card"><div class="row sp"><h3>${esc(x.t)}</h3><span class="chip m">Sample listing</span></div><div class="mute">${fmt(x.s)} · ${esc(x.venue)} · ${x.cat}</div><p style="margin:6px 0">${esc(x.desc)}</p><div class="row"><button class="btn btn-p sm" onclick="prefill(${x.id})">Find ride buddies</button>${calBtn("l"+x.id,{uid:"l"+x.id,t:x.t,s:x.s,e:x.s+3*HR,loc:x.venue,desc:x.desc})}</div></div>`}
+function ridesTab(){
+ if(!st.carpool)return `<h2>Rides</h2><div class="card" style="margin-top:12px">USG has turned off ride sharing for this pilot.</div>`;
+ const f=st.rf,pre=st.pre||{};let L=R.filter(r=>r.s>now());
+ if(f.q)L=L.filter(r=>(r.t+" "+r.dest).toLowerCase().includes(f.q.toLowerCase()));if(f.cat)L=L.filter(r=>r.cat===f.cat);if(f.mode)L=L.filter(r=>r.mode===f.mode);if(f.open)L=L.filter(r=>r.mem.length<r.spots);if(f.mine)L=L.filter(r=>r.mem.includes(st.me.id));L.sort((a,b)=>a.s-b.s);
+ const sel=(k,lab,o)=>`<select aria-label="${lab}" onchange="setF('${k}',this.value)"><option value="">${lab}</option>${o.map(v=>`<option ${f[k]===v?"selected":""}>${v}</option>`).join("")}</select>`;
+ const fm=`<div class="card hl"><h3>Post a ride request</h3><div class="fm"><div class="full"><label for="n_t">Title</label><input type="text" id="n_t" value="${esc(pre.t||"")}" placeholder="Looking for people to Uber to LAX"></div>
+ <div><label for="n_c">Type</label><select id="n_c">${CATS.map(c=>`<option ${pre.cat===c?"selected":""}>${c}</option>`).join("")}</select></div><div><label for="n_d">Destination</label><input type="text" id="n_d" value="${esc(pre.dest||"")}" placeholder="LAX Airport"></div>
+ <div><label for="n_f">Meet at</label><input type="text" id="n_f" placeholder="Tommy Trojan"></div><div><label for="n_dt">Departure</label><input type="datetime-local" id="n_dt" value="${locIn(pre.s||now()+DAY)}"></div>
+ <div><label for="n_m">How we go</label><select id="n_m">${MODES.map(m=>`<option>${m}</option>`).join("")}</select></div><div><label for="n_s">People total</label><select id="n_s">${[2,3,4,5,6].map(n=>`<option ${n===4?"selected":""}>${n}</option>`).join("")}</select></div>
+ <div><label for="n_$">Estimated total cost ($)</label><input type="number" id="n_$" min="0" placeholder="45"></div><div class="full"><label for="n_n">Note</label><input type="text" id="n_n" placeholder="Luggage, return plans, anything riders should know"></div></div>
+ <div class="row"><button class="btn btn-p" onclick="mkRide()">Post ride</button><button class="btn btn-s" onclick="st.form=false;st.pre=null;render()">Cancel</button></div><p class="exp" style="margin:8px 0 0">Ride requests disappear after departure.</p></div>`;
+ const la=st.lr?st.lr.ids.map(id=>LA.find(x=>x.id===id)).filter(Boolean):[];
+ return `<div class="row sp"><h2>Rides</h2><button class="btn btn-p sm" onclick="st.form=!st.form;st.pre=null;render()">${st.form?"Close form":"Post a ride request"}</button></div>
+ <p class="mute" style="margin-top:6px">Off-campus trips: airports, concerts, road trips. Split the cost or travel in a group to stay safer.</p>${st.form?fm:""}
+ <div class="card" style="margin-top:14px"><b>Search LA events</b><div class="mute">Describe what you want, then find people to go with.</div>${searchBar("la","Try: a concert this weekend, or something outdoors")}${understood(st.lr)}${st.lr?(la.length?la.map(laCard).join(""):'<div class="mute">No sample listings match that yet.</div>'):""}</div>
+ <h3 style="margin:18px 0 8px">Ride requests</h3><div class="fl"><input type="text" aria-label="Search destinations" placeholder="Search destinations" value="${esc(f.q||"")}" onchange="setF('q',this.value.trim())">${sel("cat","Any type",CATS)}${sel("mode","Any transit type",MODES)}</div>
+ <div class="row" style="margin-bottom:12px"><button class="tg ${f.open?"on":""}" onclick="togF('open')">Open spots only</button><button class="tg ${f.mine?"on":""}" onclick="togF('mine')">My rides</button>${Object.keys(f).length?`<button class="tg" onclick="st.rf={};render()">Clear filters</button>`:""}<span class="mute">${L.length} ride${L.length===1?"":"s"}, soonest first</span></div>
+ ${L.length?L.map(rideCard).join(""):'<div class="card">No rides match. Clear a filter or post your own request.</div>'}`}
+
+/* ---------- messages ---------- */
+function threads(){const me=st.me,T=[];Object.keys(st.groups).filter(k=>st.groups[k].length).forEach(k=>{const e=E.find(x=>x.id==k);T.push({k:"e"+k,t:e.t,sub:"Event group",m:[me.id,...st.groups[k]],end:e.s+DAY})});R.filter(r=>r.mem.includes(me.id)).forEach(r=>T.push({k:"r"+r.id,t:r.t,sub:r.mode+" · "+fmt(r.s),m:r.mem,end:r.s+DAY}));return T}
+function msgsOf(T){if(!msgs[T.k]){const f=T.m.find(i=>i!==st.me.id)||T.m[0];msgs[T.k]=[{f,x:T.k[0]==="e"?"Hi! Excited to go together. "+ICE[0]:"Hi all! Tell me if the meetup time needs to change."}]}return msgs[T.k]}
+function openTh(k){st.tab="groups";st.th=k;st.ev=null;render();window.scrollTo(0,0)}
+function threadView(){const T=threads().find(t=>t.k===st.th);if(!T){st.th=null;return msgsTab()}const arch=T.end<now();
+ return `<button class="back" onclick="st.th=null;render()">← Back to messages</button><h2 style="font-size:22px">${esc(T.t)}</h2><div class="mute">${T.m.map(nm).join(", ")}${arch?" · <b>Archived</b> (read-only)":""}</div>
+ <div style="margin:14px 0">${msgsOf(T).map(m=>{const mine=m.f===st.me.id;return `<div class="bub ${mine?"me":""}"><small>${mine?"You":nm(m.f)}</small>${esc(m.x)}</div>`}).join("")}</div>
+ ${arch?"":`<div class="ai"><input type="text" id="mi" aria-label="Message" placeholder="Write a message" onkeydown="if(event.key==='Enter')send()"><button class="btn btn-p" onclick="send()">Send</button></div>`}
+ <p class="safe">Keep plans in the group and be kind. <a href="#" onclick="toast('Report sent to USG');return false">Report</a> · <a href="#" onclick="toast('User blocked');return false">Block</a></p>`}
+function send(){const inp=$("mi"),x=inp.value.trim();if(!x)return;const k=st.th,T=threads().find(t=>t.k===k),who=T.m.find(i=>i!==st.me.id);msgsOf(T).push({f:st.me.id,x});render();window.scrollTo(0,document.body.scrollHeight);const n=$("mi");if(n)n.focus();
+ if(who)setTimeout(()=>{if(msgs[k]){msgs[k].push({f:who,x:REPL[msgs[k].length%REPL.length]});if(st.th===k&&st.tab==="groups"){render();window.scrollTo(0,document.body.scrollHeight)}}},1500)}
+function msgsTab(){if(st.th)return threadView();const T=threads();return `<h2>Messages</h2><p class="mute" style="margin:6px 0 14px">Group chats for your event groups and rides. Chats are archived 24 hours after the event.</p>`+(T.length?T.map(t=>{const M=msgsOf(t),l=M[M.length-1];return `<button class="card" style="width:100%;text-align:left" onclick="st.th='${t.k}';render()"><b>${esc(t.t)}</b>${t.end<now()?' <span class="chip">Archived</span>':""}<div class="mute">${esc(t.sub)} · ${t.m.length} people</div><div class="mute" style="margin-top:4px">${nm(l.f)}: ${esc(l.x.slice(0,60))}</div></button>`}).join(""):'<div class="card">No chats yet. Go to an event with someone or join a ride and a chat opens automatically.</div>')}
+
+/* ---------- USG admin ---------- */
+function admin(){const gc=Object.values(st.groups).filter(g=>g.length).length,seg=[["First-year",62],["Sophomore to senior",48],["Transfer",24],["Commuter",18]];
+ const tg=(k,l)=>`<div class="row sp" style="margin-top:8px"><span>${l}</span><button class="sw ${st[k]?"on":""}" aria-label="Toggle ${l}" onclick="st.${k}=!st.${k};render()"></button></div>`;
+ return `<h2>USG dashboard</h2><p class="mute" style="margin-top:6px">Pilot: 5 orgs, one semester. Sample data plus live demo activity.</p>
+ <div class="stats"><div class="stat"><b>${vis({orgs:[1,2,3,4,5,6,7]}).length}</b>Upcoming events</div><div class="stat"><b>${14+P.length}</b>Active buddy posts</div><div class="stat"><b>${12+gc}</b>Groups formed</div><div class="stat"><b>${R.filter(r=>r.s>now()).length}</b>Open ride requests</div><div class="stat"><b>${st.cleaned}</b>Expired and cleaned</div></div>
+ <div class="card"><b>Participation by student type</b><p class="mute" style="margin:2px 0 8px">Gold bars show underserved groups.</p>${seg.map(([n,v])=>`<div class="row sp"><span>${n}</span><span class="mute">${v}%</span></div><div class="bar"><i class="${v<30?"low":""}" style="width:${v}%"></i></div>`).join("")}</div>
+ <div class="card"><b>Reported content</b>${st.reports.length?st.reports.map(r=>`<div class="row sp" style="margin-top:8px"><span>${esc(r.txt)}</span><span class="row"><button class="btn btn-s sm" onclick="rep(${r.id},'Approved')">Approve</button><button class="btn btn-p sm" onclick="rep(${r.id},'Removed')">Remove</button></span></div>`).join(""):'<div class="mute" style="margin-top:6px">No open reports.</div>'}</div>
+ <div class="card"><b>Settings</b>${tg("carpool","Ride sharing")}${tg("aiOn","AI search")}<div class="mute" style="margin-top:8px">Featured orgs: Welcome Committee, Film Society · Moderation keywords: spam, harassment</div></div>
+ <div class="card"><button class="btn btn-p" onclick="pilot()">Generate pilot report</button>${st.pilot?`<p style="margin:10px 0 0">${st.pilot}</p>`:""}</div>`}
+function rep(id,a){st.reports=st.reports.filter(r=>r.id!==id);toast(a);render()}
+function pilot(){st.pilot="This week "+P.length+" buddy posts were active, "+st.cleaned+" expired and were cleaned up, and groups formed across the pilot orgs. Transfer (24%) and commuter (18%) participation lags first-years (62%). Recommendation: promote evening mixers to transfers, feature the Welcome Committee events, and keep ride sharing on with a safety reminder.";render()}
+
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&st.menu){st.menu=false;render()}});
+function render(){const a=$("app");if(!st.me&&!st.admin){a.innerHTML=login();return}sweep();
+ let b;if(st.admin)b=admin();else if(st.tab==="feed")b=st.ev?eventView():feed();else if(st.tab==="rides")b=ridesTab();else b=msgsTab();
+ a.innerHTML=header()+`<div class="wrap">${!st.admin?pills():""}${b}</div>`+(st.menu?menu():"")}
+render();
+</script>
+</body>
+</html>

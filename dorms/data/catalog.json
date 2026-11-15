@@ -1,0 +1,3393 @@
+{
+  "generatedFrom": "USC Housing interactive map and building pages, fetched 2026-11-14; landmark coordinates from the U.S. Census Bureau geocoder except where a dining hall is placed inside a residence on the Housing site.",
+  "walk": {
+    "pathFactor": 1.3,
+    "metersPerMinute": 80
+  },
+  "halls": [
+    {
+      "id": "adx",
+      "name": "ADX",
+      "code": "ADX",
+      "address": "725, 727 and 731 W. 32nd St. LOS ANGELES, CA 90007",
+      "lat": 34.02482,
+      "lng": -118.28167,
+      "url": "https://housing.usc.edu/index.php/buildings/adx/",
+      "rooms": [
+        {
+          "type": "Single",
+          "code": "SGLE",
+          "occupancy": "One person",
+          "spaces": 9,
+          "rate": 7000,
+          "period": "semester",
+          "form": "traditional"
+        },
+        {
+          "type": "Large Single",
+          "code": "SGLE-LG",
+          "occupancy": "One person",
+          "spaces": 1,
+          "rate": 7550,
+          "period": "semester",
+          "form": "traditional"
+        }
+      ],
+      "forms": [
+        "traditional"
+      ],
+      "features": [
+        "nine-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "veteran"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Located at corner of 32nd Street and Royal, across from Troy East, ADX consists of two small buildings built in the California bungalow style of the early 20th century. Each has a number of single occupancy rooms,…",
+      "summary": "Two California bungalow buildings. The page describes a veterans housing program, with single rooms plus shared bathrooms and a shared kitchen."
+    },
+    {
+      "id": "annenberg-house",
+      "name": "Annenberg",
+      "code": "ANH",
+      "address": "711 W. 27TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.028839,
+      "lng": -118.279217,
+      "url": "https://housing.usc.edu/index.php/buildings/annenberg-house/",
+      "rooms": [
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P",
+          "occupancy": "Four person",
+          "spaces": 188,
+          "rate": 6650,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "nine-month-contract"
+      ],
+      "meal": "partial",
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-ay"
+      ],
+      "gih": false,
+      "unavailableFall2026": true,
+      "quote": "{ Due to Renovations beginning in May, Annenberg will not be available for the Summer or Fall of 2026 } This attractive three-story apartment building is the place for students looking for an active and vibrant…",
+      "summary": "A communications housing program. The building page says it is unavailable for summer and fall 2026 because of renovations."
+    },
+    {
+      "id": "bel-air",
+      "name": "Bel-Air",
+      "code": "BAA",
+      "address": "1124 W. 29TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.028114,
+      "lng": -118.284668,
+      "url": "https://housing.usc.edu/index.php/buildings/bel-air/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B1P",
+          "occupancy": "One family",
+          "spaces": 8,
+          "rate": 1910,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Large one-bedroom",
+          "code": "1B1P-LG",
+          "occupancy": "One family",
+          "spaces": 2,
+          "rate": 1975,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B1P",
+          "occupancy": "One family",
+          "spaces": 2,
+          "rate": 2363,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "family"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Bel-Air is a small apartment building with one- and two-bedroom for married students and families. The one-bedroom units are a great option for married couples with one child. The two-bedroom units are reserved for…",
+      "summary": "Listed as a family building on the application page. The building page says it is for married students and families."
+    },
+    {
+      "id": "birnkrant-residential-college",
+      "name": "Birnkrant Residential College",
+      "code": "BSR",
+      "address": "642 WEST 34TH STREET, LOS ANGELES, CA 90089",
+      "lat": 34.021445,
+      "lng": -118.282417,
+      "url": "https://housing.usc.edu/index.php/buildings/birnkrant-residential-college/",
+      "rooms": [
+        {
+          "type": "Single",
+          "code": "SGLE",
+          "occupancy": "One person",
+          "spaces": 4,
+          "rate": 8500,
+          "period": "semester",
+          "form": "traditional"
+        },
+        {
+          "type": "Double",
+          "code": "DBLE",
+          "occupancy": "Two person",
+          "spaces": 216,
+          "rate": 6500,
+          "period": "semester",
+          "form": "traditional"
+        },
+        {
+          "type": "Triple",
+          "code": "TRPL",
+          "occupancy": "Three person",
+          "spaces": 39,
+          "rate": 6500,
+          "period": "semester",
+          "form": "traditional"
+        }
+      ],
+      "forms": [
+        "traditional"
+      ],
+      "features": [
+        "community-bathroom"
+      ],
+      "meal": "full",
+      "noElevator": false,
+      "climate": "social",
+      "climateNote": "The published description calls this hall \"7 Floors of Open Doors.\"",
+      "audiences": [
+        "freshman"
+      ],
+      "gih": true,
+      "unavailableFall2026": false,
+      "quote": "This eight story campus landmark is a stylish and popular residential college. Birnkrant has seven floors of student housing, each divided into men’s and women’s sections. Each floor has approximately 20 rooms, two…",
+      "summary": "A first-year residential college with gender-separated floors and community bathrooms. It is next to Leavey Library and offers Gender-Inclusive rooms and First Generation Plus."
+    },
+    {
+      "id": "usc-village-building-6",
+      "name": "Cale and Irani Residential College",
+      "code": "UVS-CIC",
+      "address": "929 W. JEFFERSON BLVD., LOS ANGELES, CA 90089",
+      "lat": 34.024885,
+      "lng": -118.285578,
+      "url": "https://housing.usc.edu/index.php/buildings/usc-village-building-6/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two-person",
+          "spaces": 20,
+          "rate": 7500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B3P",
+          "occupancy": "Three-person",
+          "spaces": 15,
+          "rate": 5850,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B2P-SM",
+          "occupancy": "Two-person",
+          "spaces": 70,
+          "rate": 7700,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B3P-SGLE",
+          "occupancy": "One-person",
+          "spaces": 4,
+          "rate": 8500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B3P-DBLE",
+          "occupancy": "Two-person",
+          "spaces": 20,
+          "rate": 6900,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P-Loft",
+          "occupancy": "Four-person",
+          "spaces": 80,
+          "rate": 5850,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P",
+          "occupancy": "Four-person",
+          "spaces": 220,
+          "rate": 6900,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom with double bath",
+          "code": "2B4P-DB",
+          "occupancy": "Four-person",
+          "spaces": 16,
+          "rate": 7200,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Three-bedroom with double bath",
+          "code": "3B6P-DB",
+          "occupancy": "Six-person",
+          "spaces": 90,
+          "rate": 7150,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "full",
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "freshman",
+        "continuing"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Part of the exciting USC Village complex, the Cale and Irani Residential College is a five-story edifice designed in the Collegiate Gothic brick and stone architectural style. The first floor is devoted to common…",
+      "summary": "A residential college in USC Village with apartment floor plans. The interactive map lists it for both freshmen and non-freshmen."
+    },
+    {
+      "id": "cardinal-n-gold",
+      "name": "Cardinal 'N Gold",
+      "code": "CNG",
+      "address": "737 W. 30TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.026397,
+      "lng": -118.280724,
+      "url": "https://housing.usc.edu/index.php/buildings/cardinal-n-gold/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two person",
+          "spaces": 27,
+          "rate": 7130,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "partial",
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "continuing"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "By choosing Cardinal 'N Gold, students can become part of a USC Housing's green community, where residents' efforts to live sustainably are supported by programming and educational events. All apartments in this…",
+      "summary": "Upperclass apartments for the sustainable-living community. Every unit is a one-bedroom for two residents."
+    },
+    {
+      "id": "cardinal-gardens-2",
+      "name": "Cardinal Gardens",
+      "code": "CAR",
+      "address": "3131 MCCLINTOCK AVE., LOS ANGELES, CA 90007",
+      "lat": 34.02568,
+      "lng": -118.286957,
+      "url": "https://housing.usc.edu/index.php/buildings/cardinal-gardens-2/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two person",
+          "spaces": 155,
+          "rate": 7130,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P",
+          "occupancy": "Four person",
+          "spaces": 500,
+          "rate": 6750,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "full",
+      "noElevator": false,
+      "climate": "social",
+      "climateNote": "The published description calls this an energetic community.",
+      "audiences": [
+        "freshman",
+        "continuing"
+      ],
+      "gih": true,
+      "unavailableFall2026": false,
+      "quote": "Cardinal Gardens is an extremely popular apartment complex consisting of nine individual townhouse-style buildings and a Customer Service building, all connected by winding, tree-lined walkways and surrounding a…",
+      "summary": "Townhouse apartments. The page says they house mostly upperclass students and a limited number of freshmen. One of the Gender-Inclusive apartment locations."
+    },
+    {
+      "id": "centennial",
+      "name": "Centennial",
+      "code": "CEN",
+      "address": "2390 PORTLAND ST., LOS ANGELES, CA 90007",
+      "lat": 34.03142,
+      "lng": -118.282293,
+      "url": "https://housing.usc.edu/index.php/buildings/centennial/",
+      "rooms": [
+        {
+          "type": "Two-bedroom",
+          "code": "2B2P",
+          "occupancy": "Two person",
+          "spaces": 75,
+          "rate": 1730,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "nine-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-ay"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "The large, modern two-bedroom apartments at Centennial afford graduate students the privacy of their own large bedroom and the cost savings of sharing an apartment with another resident. The living rooms and each…",
+      "summary": "Two-bedroom graduate apartments for two people. The application page includes this building in the graduate academic-year term."
+    },
+    {
+      "id": "century",
+      "name": "Century",
+      "code": "CAP",
+      "address": "3115 ORCHARD AVE., LOS ANGELES, CA 90007",
+      "lat": 34.026159,
+      "lng": -118.289022,
+      "url": "https://housing.usc.edu/index.php/buildings/century/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two-person",
+          "spaces": 92,
+          "rate": 7130,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P-SM",
+          "occupancy": "Two-person",
+          "spaces": 180,
+          "rate": 6300,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P-LG",
+          "occupancy": "Two-person",
+          "spaces": 180,
+          "rate": 6750,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "continuing"
+      ],
+      "gih": true,
+      "unavailableFall2026": false,
+      "quote": "Comprised of two large buildings surrounding a central open area with a lawn, pool and customer service center, Century is an excellent choice for upperclassmen looking for an apartment close to campus. It offers air…",
+      "summary": "Upperclass apartments close to campus. One of the Gender-Inclusive apartment locations."
+    },
+    {
+      "id": "usc-village-building-9",
+      "name": "Cowlings and Ilium Residential College",
+      "code": "UVN-CRC",
+      "address": "3131 S. HOOVER ST., LOS ANGELES, CA 90089",
+      "lat": 34.026121,
+      "lng": -118.284549,
+      "url": "https://housing.usc.edu/index.php/buildings/usc-village-building-9/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two-person",
+          "spaces": 28,
+          "rate": 7500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B3P",
+          "occupancy": "Three-person",
+          "spaces": 12,
+          "rate": 5850,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B2P-SM",
+          "occupancy": "Two-person",
+          "spaces": 16,
+          "rate": 7700,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B2P",
+          "occupancy": "Two-person",
+          "spaces": 14,
+          "rate": 8500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B3P-SGLE",
+          "occupancy": "One-person",
+          "spaces": 6,
+          "rate": 8500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B3P-DBLE",
+          "occupancy": "Two-person",
+          "spaces": 36,
+          "rate": 6900,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P-Loft",
+          "occupancy": "Four-person",
+          "spaces": 96,
+          "rate": 5850,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P",
+          "occupancy": "Four-person",
+          "spaces": 328,
+          "rate": 6900,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom with double bath",
+          "code": "2B4P-DB",
+          "occupancy": "Four-person",
+          "spaces": 48,
+          "rate": 7200,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Three-bedroom with double bath",
+          "code": "3B6P-DB",
+          "occupancy": "Six-person",
+          "spaces": 114,
+          "rate": 7150,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "partial",
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "continuing"
+      ],
+      "gih": true,
+      "unavailableFall2026": false,
+      "quote": "The largest structure in USC Village, the Cowlings and Ilium Residential College is a tangible statement of the university's commitment to housing undergraduates on or adjacent to campus, providing over 700 spaces to…",
+      "summary": "The largest building in USC Village. The page says it is for sophomores, juniors, and seniors, and it has Gender-Inclusive apartments."
+    },
+    {
+      "id": "fairmont",
+      "name": "Fairmont",
+      "code": "FMT",
+      "address": "2629 PORTLAND ST., LOS ANGELES, CA 90007",
+      "lat": 34.030099,
+      "lng": -118.28282,
+      "url": "https://housing.usc.edu/index.php/buildings/fairmont/",
+      "rooms": [
+        {
+          "type": "Bachelor",
+          "code": "BACH",
+          "occupancy": "One person",
+          "spaces": 16,
+          "rate": 1500,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Studio",
+          "code": "STU1",
+          "occupancy": "One person",
+          "spaces": 17,
+          "rate": 1675,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two person",
+          "spaces": 10,
+          "rate": 1200,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P",
+          "occupancy": "Four person",
+          "spaces": 12,
+          "rate": 1000,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": true,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-fy"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Fairmont is a favorite choice for graduate students looking for their own space at a competitive price, as well as for those seeking to share living quarters to save money. This small, three-story building offers a…",
+      "summary": "Graduate apartments. The page says there is no elevator. The application page lists it for the full-year graduate term."
+    },
+    {
+      "id": "founders",
+      "name": "Founders",
+      "code": "FSA",
+      "address": "2610 PORTLAND ST., LOS ANGELES, CA 90007",
+      "lat": 34.030421,
+      "lng": -118.282102,
+      "url": "https://housing.usc.edu/index.php/buildings/founders/",
+      "rooms": [
+        {
+          "type": "Three-bedroom",
+          "code": "3B3P",
+          "occupancy": "Three person",
+          "spaces": 129,
+          "rate": 1600,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "nine-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Founders is home to the Graduate and International Program for students at the Gould School of Law. This three-story, modern apartment building is located in the heart of student housing in the north university…",
+      "summary": "The page says this building houses the Graduate and International Program for students at the Gould School of Law."
+    },
+    {
+      "id": "helena",
+      "name": "Helena",
+      "code": "HAP",
+      "address": "1220 W.28TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.029079,
+      "lng": -118.287106,
+      "url": "https://housing.usc.edu/index.php/buildings/helena/",
+      "rooms": [
+        {
+          "type": "Bachelor",
+          "code": "BACH",
+          "occupancy": "One person",
+          "spaces": 3,
+          "rate": 1500,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Studio",
+          "code": "STU1",
+          "occupancy": "One person",
+          "spaces": 5,
+          "rate": 1675,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two person",
+          "spaces": 27,
+          "rate": 1200,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-fy"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Helena is a typical one-story California-style apartment building, with the units arranged around an enclosed central courtyard. The building offers shared and single accommodations for graduate students in a mix of…",
+      "summary": "Graduate apartments arranged around a courtyard. Listed for the full-year term."
+    },
+    {
+      "id": "hillview",
+      "name": "Hillview",
+      "code": "HIL",
+      "address": "2605 SEVERANCE ST., LOS ANGELES, CA 90007",
+      "lat": 34.029994,
+      "lng": -118.281254,
+      "url": "https://housing.usc.edu/index.php/buildings/hillview/",
+      "rooms": [
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P",
+          "occupancy": "Four-Person",
+          "spaces": 112,
+          "rate": 1110,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "nine-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Hillview provides large apartments for graduate students in a two-bedroom, four-person format that provides residents the advantages and cost savings of sharing living quarters. The building's spacious, remodeled and…",
+      "summary": "Large graduate apartments with two bedrooms shared by four people."
+    },
+    {
+      "id": "la-sorbonne",
+      "name": "La Sorbonne",
+      "code": "LAB",
+      "address": "1170 W. 31ST ST., LOS ANGELES, CA 90007",
+      "lat": 34.026192,
+      "lng": -118.28847,
+      "url": "https://housing.usc.edu/index.php/buildings/la-sorbonne/",
+      "rooms": [
+        {
+          "type": "Studio",
+          "code": "STU1",
+          "occupancy": "One person",
+          "spaces": 5,
+          "rate": 8200,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Small one-bedroom",
+          "code": "1B2P-SM",
+          "occupancy": "Two person",
+          "spaces": 2,
+          "rate": 6750,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two person",
+          "spaces": 40,
+          "rate": 7130,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom double",
+          "code": "5PDBLE",
+          "occupancy": "Two person",
+          "spaces": 2,
+          "rate": 6750,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom triple",
+          "code": "5PTRPL",
+          "occupancy": "Three person",
+          "spaces": 3,
+          "rate": 5670,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "partial",
+      "noElevator": true,
+      "climate": "independent",
+      "climateNote": "The published description calls this a quiet apartment building.",
+      "audiences": [
+        "continuing"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "La Sorbonne is a quiet apartment building just off Jefferson Boulevard, popular due to its varied floor plans and close proximity to campus. The three-story building (which does not have an elevator) features fully…",
+      "summary": "A quiet apartment building near Jefferson Boulevard. The page says there is no elevator."
+    },
+    {
+      "id": "manor",
+      "name": "Manor",
+      "code": "MAB",
+      "address": "2636 PORTLAND ST., LOS ANGELES, CA 90007",
+      "lat": 34.029792,
+      "lng": -118.282497,
+      "url": "https://housing.usc.edu/index.php/buildings/manor/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B1P",
+          "occupancy": "One person",
+          "spaces": 9,
+          "rate": 2000,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B2P",
+          "occupancy": "Two person",
+          "spaces": 8,
+          "rate": 1730,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-fy"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Manor is a small two-story apartment building featuring one and two-bedroom apartments for graduate students. The building's smaller size and layout engenders a communal environment. All units are single occupancy…",
+      "summary": "A small graduate apartment building. Listed for the full-year term."
+    },
+    {
+      "id": "marks-tower",
+      "name": "Marks Tower",
+      "code": "DMT",
+      "address": "612 HELLMAN WAY, LOS ANGELES, CA 90089",
+      "lat": 34.019592,
+      "lng": -118.282185,
+      "url": "https://housing.usc.edu/index.php/buildings/marks-tower/",
+      "rooms": [
+        {
+          "type": "Double",
+          "code": "DBLE",
+          "occupancy": "Two person",
+          "spaces": 188,
+          "rate": 6500,
+          "period": "semester",
+          "form": "traditional"
+        }
+      ],
+      "forms": [
+        "traditional"
+      ],
+      "features": [
+        "community-bathroom"
+      ],
+      "meal": "full",
+      "noElevator": false,
+      "climate": "social",
+      "climateNote": "The published description says first-year students live, eat, and study together and take part in many residential activities.",
+      "audiences": [
+        "freshman"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Marks Tower has all the features of a traditional residence hall and, at eight stories tall, many of the building's rooms have amazing views. The population of first-year freshmen live, eat and study together while…",
+      "summary": "A traditional first-year hall with single-gender floors and community bathrooms. With Pardee Tower, it is part of South Residential College."
+    },
+    {
+      "id": "max-kade-house",
+      "name": "Max Kade House",
+      "code": "GEX",
+      "address": "2718 S. HOOVER ST., LOS ANGELES, CA 90007",
+      "lat": 34.029653,
+      "lng": -118.283692,
+      "url": "https://housing.usc.edu/index.php/buildings/max-kade-house/",
+      "rooms": [
+        {
+          "type": "Single",
+          "code": "SGLE",
+          "occupancy": "One person",
+          "spaces": 2,
+          "rate": 1300,
+          "period": "month",
+          "form": "traditional"
+        },
+        {
+          "type": "Double",
+          "code": "DBLE",
+          "occupancy": "Two person",
+          "spaces": 4,
+          "rate": 1000,
+          "period": "month",
+          "form": "traditional"
+        },
+        {
+          "type": "Large double",
+          "code": "DBLE-LG",
+          "occupancy": "Two person",
+          "spaces": 4,
+          "rate": 1120,
+          "period": "month",
+          "form": "traditional"
+        }
+      ],
+      "forms": [
+        "traditional"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-fy",
+        "female-grad"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "With a variety of room sizes available, this small two-story house is a popular choice for female graduate students looking for an inexpensive housing option for students with similar dietary preferences. The…",
+      "summary": "The page says this house is for female graduate students and has a shared kitchen that can be used for vegetarian meals."
+    },
+    {
+      "id": "mccarthy-honors-residential-college",
+      "name": "McCarthy Honors Residential College",
+      "code": "UVF-MHC",
+      "address": "3096 MCCLINTOCK AVE., LOS ANGELES, CA 90089",
+      "lat": 34.025766,
+      "lng": -118.285793,
+      "url": "https://housing.usc.edu/index.php/buildings/mccarthy-honors-residential-college/",
+      "rooms": [
+        {
+          "type": "Single",
+          "code": "2PSGLE",
+          "occupancy": "Two-person",
+          "spaces": 8,
+          "rate": 8500,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Single",
+          "code": "3PSGLE",
+          "occupancy": "One-person",
+          "spaces": 35,
+          "rate": 8500,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Single",
+          "code": "4PSGLE",
+          "occupancy": "Four-person",
+          "spaces": 40,
+          "rate": 8500,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Double",
+          "code": "3PDBLE",
+          "occupancy": "Two-person",
+          "spaces": 98,
+          "rate": 6900,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Double",
+          "code": "4PDBLE-Loft",
+          "occupancy": "Four-person",
+          "spaces": 112,
+          "rate": 5850,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Double",
+          "code": "4PDBLE",
+          "occupancy": "Four-person",
+          "spaces": 16,
+          "rate": 6900,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Double",
+          "code": "4PDBLE-DB",
+          "occupancy": "Four-person",
+          "spaces": 152,
+          "rate": 7200,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Double",
+          "code": "8PDBLE",
+          "occupancy": "Eight-person",
+          "spaces": 64,
+          "rate": 6900,
+          "period": "semester",
+          "form": "suite"
+        }
+      ],
+      "forms": [
+        "suite"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "freshman",
+        "honors"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "The McCarthy Honors Residential College is the visual center of the USC Village complex, with a Gothic-style clock tower that spires 145 feet into the air. The Honors College's distinctive collegiate-motif…",
+      "summary": "The honors residential college in USC Village, with suite floor plans. The page says it is for freshmen who hold a Mork Family, Stamps, Trustee, or Presidential scholarship."
+    },
+    {
+      "id": "mcclintock-apartments",
+      "name": "McClintock Apartments",
+      "code": "MCO; MCK",
+      "address": "1076 and 1082 W. 30TH ST ., LOS ANGELES, CA 90007",
+      "lat": 34.02726,
+      "lng": -118.28599,
+      "url": "https://housing.usc.edu/index.php/buildings/mcclintock-apartments/",
+      "rooms": [
+        {
+          "type": "Small studio single",
+          "code": "STU1-SM",
+          "occupancy": "One Person",
+          "spaces": 2,
+          "rate": 8200,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Studio single",
+          "code": "STU1",
+          "occupancy": "One Person",
+          "spaces": 26,
+          "rate": 8500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B2P",
+          "occupancy": "Two person",
+          "spaces": 8,
+          "rate": 7900,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "partial",
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "continuing"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "McClintock Apartments are made up of two small two-story buildings. Built in the early 20th century, their California Spanish Colonial architecture recalls a simpler and more stately era in the history of Los Angeles…",
+      "summary": "Two small apartment buildings near 30th Street."
+    },
+    {
+      "id": "usc-village-building-7",
+      "name": "McMorrow Residential College",
+      "code": "UVV-MRC",
+      "address": "835 W. JEFFERSON BLVD., LOS ANGELES, CA 90089",
+      "lat": 34.024432,
+      "lng": -118.284613,
+      "url": "https://housing.usc.edu/index.php/buildings/usc-village-building-7/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two-person",
+          "spaces": 64,
+          "rate": 7500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B3P",
+          "occupancy": "Three-person",
+          "spaces": 6,
+          "rate": 5850,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B3P-SGLE",
+          "occupancy": "One-person",
+          "spaces": 2,
+          "rate": 8500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B3P-DBLE",
+          "occupancy": "Two-person",
+          "spaces": 12,
+          "rate": 6900,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P-Loft",
+          "occupancy": "Four-person",
+          "spaces": 36,
+          "rate": 5850,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P",
+          "occupancy": "Four-person",
+          "spaces": 112,
+          "rate": 6900,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom with double bath",
+          "code": "2B4P-DB",
+          "occupancy": "4 person",
+          "spaces": 16,
+          "rate": 7200,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Three-bedroom with double bath",
+          "code": "3B6P-DB",
+          "occupancy": "Six-person",
+          "spaces": 18,
+          "rate": 7150,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "partial",
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "continuing"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Located directly across Jefferson Boulevard from the main USC campus, McMorrow Residential College is convenient to classes, libraries, dining and other campus facilities. A large second floor outdoor patio deck…",
+      "summary": "A USC Village residential college across Jefferson Boulevard, with apartment floor plans."
+    },
+    {
+      "id": "usc-village-building-8",
+      "name": "Nemirovsky and Bohnett Residential College",
+      "code": "UVE-NBC",
+      "address": "3201 S. HOOVER ST., LOS ANGELES, CA 90089",
+      "lat": 34.024734,
+      "lng": -118.284184,
+      "url": "https://housing.usc.edu/index.php/buildings/usc-village-building-8/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two-person",
+          "spaces": 34,
+          "rate": 7500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B3P",
+          "occupancy": "Three-person",
+          "spaces": 33,
+          "rate": 5850,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B2P-SM",
+          "occupancy": "Two-person",
+          "spaces": 12,
+          "rate": 7700,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B3P-DBLE",
+          "occupancy": "Two-person",
+          "spaces": 8,
+          "rate": 6900,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P-Loft",
+          "occupancy": "Four-person",
+          "spaces": 16,
+          "rate": 5850,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P",
+          "occupancy": "Four-person",
+          "spaces": 192,
+          "rate": 6900,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Three-bedroom with double bath",
+          "code": "3B5P-SGLE",
+          "occupancy": "One-person",
+          "spaces": 3,
+          "rate": 8500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Three-bedroom with double bath",
+          "code": "3B5P-DBLE",
+          "occupancy": "Two-person",
+          "spaces": 12,
+          "rate": 6900,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Three-bedroom double bath",
+          "code": "3B6P-DB",
+          "occupancy": "Six-person",
+          "spaces": 42,
+          "rate": 7150,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "partial",
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "continuing"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "The distinctive Collegiate Gothic architecture of the Nemirovsky and Bohnett Residential College clearly identifies it as part of the beautiful and exciting USC Village. A open outdoor patio deck on the second floor…",
+      "summary": "A USC Village residential college with apartment floor plans. The address is 3201 S. Hoover."
+    },
+    {
+      "id": "new-north-residential-college",
+      "name": "New North Residential College",
+      "code": "COL / EVK-NEW; UNI/HRH-NRC",
+      "address": "635 MCCARTHY WAY, LOS ANGELES, CA 90089",
+      "lat": 34.021035,
+      "lng": -118.282098,
+      "url": "https://housing.usc.edu/index.php/buildings/new-north-residential-college/",
+      "rooms": [
+        {
+          "type": "Single",
+          "code": "SGLE",
+          "occupancy": "One person",
+          "spaces": 13,
+          "rate": 8500,
+          "period": "semester",
+          "form": "traditional"
+        },
+        {
+          "type": "Single with sink",
+          "code": "SGLE-WS",
+          "occupancy": "One person",
+          "spaces": 24,
+          "rate": 8750,
+          "period": "semester",
+          "form": "traditional"
+        },
+        {
+          "type": "Double",
+          "code": "DBLE",
+          "occupancy": "Two person",
+          "spaces": 360,
+          "rate": 6500,
+          "period": "semester",
+          "form": "traditional"
+        },
+        {
+          "type": "Double with sink",
+          "code": "DBLE-WS",
+          "occupancy": "Two person",
+          "spaces": 162,
+          "rate": 7200,
+          "period": "semester",
+          "form": "traditional"
+        }
+      ],
+      "forms": [
+        "traditional"
+      ],
+      "features": [
+        "community-bathroom"
+      ],
+      "meal": "full",
+      "noElevator": false,
+      "climate": "social",
+      "climateNote": "The published description says a typical resident wants a traditional hall and a sense of community in their first year.",
+      "audiences": [
+        "freshman"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Despite its name, New North Residential College is one of the university's oldest housing facilities, a place steeped in USC tradition, combining classic residence hall architecture with modern amenities and…",
+      "summary": "Four connected traditional first-year halls with community bathrooms. Everybody's Kitchen is on the EVK side."
+    },
+    {
+      "id": "pacific",
+      "name": "Pacific",
+      "code": "PCA",
+      "address": "2637 SEVERANCE ST., LOS ANGELES, CA 90007",
+      "lat": 34.029393,
+      "lng": -118.281729,
+      "url": "https://housing.usc.edu/index.php/buildings/pacific/",
+      "rooms": [
+        {
+          "type": "Two-bedroom",
+          "code": "2B2P",
+          "occupancy": "Two person",
+          "spaces": 26,
+          "rate": 1730,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "nine-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-ay"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Pacific is a medium-sized, 14-unit apartment building for graduate students, located four and a half blocks north of campus and about two blocks from the shopping, dining and recreation of the USC Village. Its…",
+      "summary": "Two-person graduate apartments. Listed for the graduate academic-year term."
+    },
+    {
+      "id": "pardee-tower",
+      "name": "Pardee Tower",
+      "code": "PTD",
+      "address": "614 HELLMAN WAY, LOS ANGELES, CA 90089",
+      "lat": 34.019979,
+      "lng": -118.282765,
+      "url": "https://housing.usc.edu/index.php/buildings/pardee-tower/",
+      "rooms": [
+        {
+          "type": "Double",
+          "code": "DBLE",
+          "occupancy": "Two person",
+          "spaces": 280,
+          "rate": 6500,
+          "period": "semester",
+          "form": "traditional"
+        }
+      ],
+      "forms": [
+        "traditional"
+      ],
+      "features": [
+        "community-bathroom"
+      ],
+      "meal": "full",
+      "noElevator": false,
+      "climate": "social",
+      "climateNote": "The published description emphasizes making friends, a community bathroom on each floor, and a lounge with televisions and foosball.",
+      "audiences": [
+        "freshman"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "This eight-floor coed residence hall is located close to Doheny Library and McCarthy Quad. Each floor has 18 double rooms, a common bathroom and a laundry facility. The modernist second-floor lounge and programming…",
+      "summary": "Traditional first-year doubles with community bathrooms. The page says the hall is close to Doheny Library and McCarthy Quad."
+    },
+    {
+      "id": "parkside-apartments",
+      "name": "Parkside Apartments",
+      "code": "PKS",
+      "address": "3730 S. MCCLINTOCK AVE., LOS ANGELES, CA 90089",
+      "lat": 34.019241,
+      "lng": -118.290516,
+      "url": "https://housing.usc.edu/index.php/buildings/parkside-apartments/",
+      "rooms": [
+        {
+          "type": "Studio",
+          "code": "STU1",
+          "occupancy": "One person",
+          "spaces": 10,
+          "rate": 8200,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Studio",
+          "code": "STU2",
+          "occupancy": "Two person",
+          "spaces": 98,
+          "rate": 6500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Large studio",
+          "code": "STU2-LG",
+          "occupancy": "Two person",
+          "spaces": 12,
+          "rate": 6650,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two person",
+          "spaces": 106,
+          "rate": 7375,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom single bedroom",
+          "code": "2B3P-SGLE",
+          "occupancy": "One person",
+          "spaces": 3,
+          "rate": 8200,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom double room",
+          "code": "2B3P-DBLE",
+          "occupancy": "Two person",
+          "spaces": 6,
+          "rate": 6750,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "recreational-facilities"
+      ],
+      "meal": "full",
+      "noElevator": false,
+      "climate": "independent",
+      "climateNote": "The published description says every floor plan has its own kitchen and bathroom, which allows more independent living.",
+      "audiences": [
+        "freshman",
+        "continuing"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Part of the Parkside Residential Community, Parkside Apartments’ two six-story buildings offer a variety of on-campus apartment choices to undergraduates. All of the floor plans have their own kitchen and bathroom,…",
+      "summary": "Undergraduate apartments at Parkside, each with a kitchen and bathroom. The interactive map lists the building for both freshmen and non-freshmen."
+    },
+    {
+      "id": "arts-humanities-residential-college-at-parkside",
+      "name": "Parkside Arts & Humanities Residential College",
+      "code": "PRB",
+      "address": "920 W. 37TH PL., LOS ANGELES, CA 90089",
+      "lat": 34.018608,
+      "lng": -118.289472,
+      "url": "https://housing.usc.edu/index.php/buildings/arts-humanities-residential-college-at-parkside/",
+      "rooms": [
+        {
+          "type": "Double-6P-ST",
+          "code": "6PDBLE",
+          "occupancy": "Six-person",
+          "spaces": 6,
+          "rate": 6600,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Double-8P-ST",
+          "code": "8PDBLE",
+          "occupancy": "Eight-person",
+          "spaces": 432,
+          "rate": 6600,
+          "period": "semester",
+          "form": "suite"
+        }
+      ],
+      "forms": [
+        "suite"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "full",
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "freshman",
+        "continuing"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "The suites of the Arts & Humanities Residential College offer residents the opportunity to be part of an exciting and groundbreaking program, focusing on arts-related activities. This four-story complex in the…",
+      "summary": "The arts and humanities suite residential college at Parkside."
+    },
+    {
+      "id": "international-residential-college-at-parkside",
+      "name": "Parkside International Residential College",
+      "code": "IRC",
+      "address": "3771 MCCLINTOCK AVE., LOS ANGELES, CA 90089",
+      "lat": 34.018829,
+      "lng": -118.290989,
+      "url": "https://housing.usc.edu/index.php/buildings/international-residential-college-at-parkside/",
+      "rooms": [
+        {
+          "type": "Single-5P-ST",
+          "code": "5PSGLE",
+          "occupancy": "One-person",
+          "spaces": 36,
+          "rate": 8500,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Double-5P-ST",
+          "code": "5PDBLE",
+          "occupancy": "Two-person",
+          "spaces": 14,
+          "rate": 6600,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Double-6P-ST",
+          "code": "6PDBLE",
+          "occupancy": "Six-person",
+          "spaces": 60,
+          "rate": 6600,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Single-7P-ST",
+          "code": "7PSGLE",
+          "occupancy": "One-person",
+          "spaces": 11,
+          "rate": 8500,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Double-7P-ST",
+          "code": "7PDBLE",
+          "occupancy": "Two-person",
+          "spaces": 24,
+          "rate": 6600,
+          "period": "semester",
+          "form": "suite"
+        },
+        {
+          "type": "Double-8P-ST",
+          "code": "8PDBLE",
+          "occupancy": "Eight-person",
+          "spaces": 256,
+          "rate": 6600,
+          "period": "semester",
+          "form": "suite"
+        }
+      ],
+      "forms": [
+        "suite"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "freshman"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "The stately and impressive International Residential College (IRC) is located in the southwest corner of campus in the Parkside area. The modern four-story complex provides housing for over 400 students in a variety…",
+      "summary": "The suite residential college at Parkside. The page says that, despite International in the name, residents come from both the United States and other countries."
+    },
+    {
+      "id": "regal-trojan",
+      "name": "Regal Trojan",
+      "code": "RTA",
+      "address": "870 W. ADAMS BLVD., LOS ANGELES, CA 90007",
+      "lat": 34.030182,
+      "lng": -118.281737,
+      "url": "https://housing.usc.edu/index.php/buildings/regal-trojan/",
+      "rooms": [
+        {
+          "type": "One bedroom",
+          "code": "1B1P",
+          "occupancy": "One family",
+          "spaces": 42,
+          "rate": 1910,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two bedroom double bath",
+          "code": "2B1P-DB",
+          "occupancy": "One family",
+          "spaces": 5,
+          "rate": 2363,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "family"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Located off campus on Adams Boulevard, Regal Trojan is luxury at a value price. The size and layout of the building provide a safe, communal atmosphere for our graduate student families from around the world. The…",
+      "summary": "Listed as a family building on the application page. It is on Adams Boulevard."
+    },
+    {
+      "id": "regent",
+      "name": "Regent",
+      "code": "RGA",
+      "address": "1138 W. 29TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.028106,
+      "lng": -118.284918,
+      "url": "https://housing.usc.edu/index.php/buildings/regent/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B1P",
+          "occupancy": "One family",
+          "spaces": 13,
+          "rate": 1910,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Large one-bedroom",
+          "code": "1B1P-LG",
+          "occupancy": "One family",
+          "spaces": 3,
+          "rate": 1975,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "family"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Regent is a small building housing for married students and students with families. These one-bedroom units are ideal for couples or families with a single child. The apartments have been renovated with new bathrooms…",
+      "summary": "Listed as a family building. The page says it is for married students and students with families."
+    },
+    {
+      "id": "senator",
+      "name": "Senator",
+      "code": "SNA",
+      "address": "1101-1109 W. 28TH ST and 2715-2733 S. HOOVER ST., LOS ANGELES, CA 90007",
+      "lat": 34.029485,
+      "lng": -118.284292,
+      "url": "https://housing.usc.edu/index.php/buildings/senator/",
+      "rooms": [
+        {
+          "type": "Bachelor",
+          "code": "BACH",
+          "occupancy": "One person",
+          "spaces": 6,
+          "rate": 1500,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B1P",
+          "occupancy": "One family",
+          "spaces": 23,
+          "rate": 1910,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "family"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Historic Senator offers fully-furnished one-bedroom apartments for families or married students. The units are spacious and feature attractive interior and modern bathrooms and kitchens. Each has limited…",
+      "summary": "The page says these one-bedroom apartments are for families or married students."
+    },
+    {
+      "id": "seven-gables",
+      "name": "Seven Gables",
+      "code": "SGA",
+      "address": "620 W. 30TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.025006,
+      "lng": -118.278633,
+      "url": "https://housing.usc.edu/index.php/buildings/seven-gables/",
+      "rooms": [
+        {
+          "type": "Studio",
+          "code": "STU1",
+          "occupancy": "One person",
+          "spaces": 18,
+          "rate": 1675,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom with double bath",
+          "code": "2B2P-DB",
+          "occupancy": "Two person",
+          "spaces": 2,
+          "rate": 1675,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-fy"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "If you are a graduate student looking for a single with the convenience and security of university-owned housing close to campus, this is the place for you. Seven Gables is an older two-story building offering…",
+      "summary": "Graduate singles close to campus. Listed for the full-year term."
+    },
+    {
+      "id": "severance-street-apts",
+      "name": "Severance Street Apts.",
+      "code": "SSA",
+      "address": "2630 SEVERANCE ST., LOS ANGELES, CA 90007",
+      "lat": 34.029407,
+      "lng": -118.281202,
+      "url": "https://housing.usc.edu/index.php/buildings/severance-street-apts/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B1P",
+          "occupancy": "One person",
+          "spaces": 1,
+          "rate": 2000,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B2P",
+          "occupancy": "Two person",
+          "spaces": 4,
+          "rate": 1730,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Three-bedroom",
+          "code": "3B3P",
+          "occupancy": "Three person",
+          "spaces": 3,
+          "rate": 1600,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Four-bedroom",
+          "code": "4B4P",
+          "occupancy": "Four person",
+          "spaces": 8,
+          "rate": 1600,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "nine-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-ay"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Essentially, Severance Street Apartments is a large colonial-style house that is divided into six apartments, all with individual bedrooms and a shared living area, kitchen and bathroom. Each of the apartment types…",
+      "summary": "A large house divided into graduate apartments. Listed for the graduate academic-year term."
+    },
+    {
+      "id": "sierra",
+      "name": "Sierra",
+      "code": "SIE",
+      "address": "2638 PORTLAND ST., LOS ANGELES, CA 90007",
+      "lat": 34.029514,
+      "lng": -118.282592,
+      "url": "https://housing.usc.edu/index.php/buildings/sierra/",
+      "rooms": [
+        {
+          "type": "Three-bedroom",
+          "code": "3B3P",
+          "occupancy": "Three person",
+          "spaces": 84,
+          "rate": 1600,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-fy"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "This three-story, modern apartment building is located in the heart of student housing in the north university campus area. Sierra's three bedroom for three people floor plan provides each resident with their own…",
+      "summary": "A three-bedroom graduate apartment building in the north campus housing area. Listed for the full-year term."
+    },
+    {
+      "id": "stardust",
+      "name": "Stardust",
+      "code": "SAI",
+      "address": "634 W. 27TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.027427,
+      "lng": -118.277946,
+      "url": "https://housing.usc.edu/index.php/buildings/stardust/",
+      "rooms": [
+        {
+          "type": "Studio",
+          "code": "STU1",
+          "occupancy": "One person",
+          "spaces": 2,
+          "rate": 1675,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "One bedroom",
+          "code": "1B1P",
+          "occupancy": "One person",
+          "spaces": 11,
+          "rate": 2000,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B2P",
+          "occupancy": "Two person",
+          "spaces": 8,
+          "rate": 1730,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "nine-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-ay"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Stardust is a two-story building with studio, one- and two-bedroom apartments--something for just about every graduate student's needs. In each configuration, residents will have their own bedroom, with the…",
+      "summary": "Graduate apartments, and one of the published Veteran Housing locations. Listed for the graduate academic-year term."
+    },
+    {
+      "id": "sunset",
+      "name": "Sunset",
+      "code": "SUN",
+      "address": "1144 W. 29TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.028114,
+      "lng": -118.285179,
+      "url": "https://housing.usc.edu/index.php/buildings/sunset/",
+      "rooms": [
+        {
+          "type": "Bachelor",
+          "code": "BACH",
+          "occupancy": "One person",
+          "spaces": 2,
+          "rate": 1500,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B1P",
+          "occupancy": "One family",
+          "spaces": 9,
+          "rate": 1910,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "family"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Sunset provides married students and families the option of living in a smaller, quieter two-story apartment building adjacent to two other USC family housing facilities, Regent and Bel-Air. Sunset shares a laundry…",
+      "summary": "Listed as a family building, next to Regent and Bel-Air."
+    },
+    {
+      "id": "terrace",
+      "name": "Terrace",
+      "code": "TSA",
+      "address": "1275 W. 29TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.028483,
+      "lng": -118.288416,
+      "url": "https://housing.usc.edu/index.php/buildings/terrace/",
+      "rooms": [
+        {
+          "type": "Two-bedroom two person",
+          "code": "2B2P",
+          "occupancy": "Two person",
+          "spaces": 58,
+          "rate": 1730,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "nine-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "law"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Terrace is reserved housing for first year JD students at the USC Gould School of Law. The program's collegial atmosphere has proven very successful, expanding the program to the entirety of the building. The…",
+      "summary": "The application page says Law Housing is only in this building and is reserved for first-year JD students at the Gould School of Law."
+    },
+    {
+      "id": "troy-east",
+      "name": "Troy East",
+      "code": "TRE",
+      "address": "3025 ROYAL ST., LOS ANGELES, CA 90007",
+      "lat": 34.025825,
+      "lng": -118.281406,
+      "url": "https://housing.usc.edu/index.php/buildings/troy-east/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two person",
+          "spaces": 24,
+          "rate": 1200,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P",
+          "occupancy": "Four person",
+          "spaces": 320,
+          "rate": 1110,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "nine-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-ay"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Troy East is a large apartment building conveniently located a block north of campus and east of the USC Village. The building is dedicated to providing a wide range of affordable apartment types to graduate students…",
+      "summary": "Graduate apartments one block north of campus. Listed for the graduate academic-year term."
+    },
+    {
+      "id": "troy-hall",
+      "name": "Troy Hall",
+      "code": "TRH",
+      "address": "3025 ROYAL ST., LOS ANGELES, CA 90007",
+      "lat": 34.025487,
+      "lng": -118.281599,
+      "url": "https://housing.usc.edu/index.php/buildings/troy-hall/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two person",
+          "spaces": 90,
+          "rate": 6500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B3P",
+          "occupancy": "Three person",
+          "spaces": 114,
+          "rate": 4550,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom with double bath",
+          "code": "2B4P-DB",
+          "occupancy": "Four person",
+          "spaces": 80,
+          "rate": 6500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom double",
+          "code": "5PDBLE",
+          "occupancy": "Two person",
+          "spaces": 38,
+          "rate": 6000,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom triple",
+          "code": "5PTRPL",
+          "occupancy": "Three person",
+          "spaces": 57,
+          "rate": 4500,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "partial",
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "continuing"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Troy Hall has very desirable location for students, just a quick, one-block walk to campus or the amenities of the USC Village, including Target, Trader Joe’s, the USC Village dining hall, the USC Village Fitness…",
+      "summary": "Undergraduate apartments near USC Village. The page emphasizes the choice of floor plans and the walk to campus."
+    },
+    {
+      "id": "troyland",
+      "name": "Troyland",
+      "code": "TAP",
+      "address": "955-959 W. ADAMS BLVD., LOS ANGELES, CA 90007",
+      "lat": 34.03164,
+      "lng": -118.283069,
+      "url": "https://housing.usc.edu/index.php/buildings/troyland/",
+      "rooms": [
+        {
+          "type": "Studio",
+          "code": "STU1",
+          "occupancy": "One person",
+          "spaces": 7,
+          "rate": 1675,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B1P",
+          "occupancy": "One person",
+          "spaces": 32,
+          "rate": 1825,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-fy"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "This two-story graduate student building is located at the corner of Adams Blvd and Hoover, just east of Hoover Park. Troyland offers single-occupancy studios and one-bedroom units with bathrooms and full…",
+      "summary": "Graduate singles near Adams Boulevard and Hoover Street. Listed for the full-year term."
+    },
+    {
+      "id": "twin-palms",
+      "name": "Twin Palms",
+      "code": "TPA",
+      "address": "2635 PORTLAND ST., LOS ANGELES, CA 90007",
+      "lat": 34.029917,
+      "lng": -118.282974,
+      "url": "https://housing.usc.edu/index.php/buildings/twin-palms/",
+      "rooms": [
+        {
+          "type": "Bachelor",
+          "code": "BACH",
+          "occupancy": "One person",
+          "spaces": 5,
+          "rate": 1500,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Studio",
+          "code": "STU1",
+          "occupancy": "One person",
+          "spaces": 3,
+          "rate": 1675,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "One-bedroom",
+          "code": "1B1P",
+          "occupancy": "One person",
+          "spaces": 3,
+          "rate": 1850,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom with double bath",
+          "code": "2B2P-DB",
+          "occupancy": "Two person",
+          "spaces": 4,
+          "rate": 1600,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-fy"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Always one of USC Housing's most popular and sought after graduate buildings, Twin Palms is a cozy two-story structure with a variety of apartment styles. All of Twin Palm's bedrooms are single occupancy, affording a…",
+      "summary": "Graduate apartments with single-occupancy bedrooms. Listed for the full-year term."
+    },
+    {
+      "id": "university-regent",
+      "name": "University Regent",
+      "code": "URA",
+      "address": "1219 W. 27TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.030562,
+      "lng": -118.287047,
+      "url": "https://housing.usc.edu/index.php/buildings/university-regent/",
+      "rooms": [
+        {
+          "type": "Bachelor",
+          "code": "BACH",
+          "occupancy": "One person",
+          "spaces": 32,
+          "rate": 1500,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "independent",
+      "climateNote": "The published description says it suits graduate students who prefer to live alone in a quiet setting.",
+      "audiences": [
+        "grad-fy"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "University Regent is three stories tall, with a gated garage and large laundry room on the first floor and the living areas on the second and third. \"Uni\" is a popular choice for graduate students who prefer to live…",
+      "summary": "A full-year option for graduate students who want to live alone."
+    },
+    {
+      "id": "vista",
+      "name": "Vista",
+      "code": "VIS",
+      "address": "2701 SEVERANCE ST., LOS ANGELES, CA 90007",
+      "lat": 34.029125,
+      "lng": -118.281812,
+      "url": "https://housing.usc.edu/index.php/buildings/vista/",
+      "rooms": [
+        {
+          "type": "One bedroom",
+          "code": "1B1P",
+          "occupancy": "One person",
+          "spaces": 8,
+          "rate": 1940,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two bedroom",
+          "code": "2B2P-SM",
+          "occupancy": "One person",
+          "spaces": 4,
+          "rate": 1550,
+          "period": "month",
+          "form": "apartment"
+        },
+        {
+          "type": "Two bedroom",
+          "code": "2B2P-LG",
+          "occupancy": "One person",
+          "spaces": 5,
+          "rate": 1730,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "grad-fy"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Vista is a small, intimate building and features a variety of attractive apartment configurations, each with private bedrooms for every resident. It is a good choice for graduates interested in getting to know their…",
+      "summary": "A small graduate apartment building. Listed for the full-year term."
+    },
+    {
+      "id": "webb-tower-residential-college",
+      "name": "Webb Tower",
+      "code": "WTO",
+      "address": "1015 W. 34TH ST., LOS ANGELES, CA 90089",
+      "lat": 34.0246,
+      "lng": -118.287699,
+      "url": "https://housing.usc.edu/index.php/buildings/webb-tower-residential-college/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B2P",
+          "occupancy": "Two person",
+          "spaces": 39,
+          "rate": 7600,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom, single bedroom",
+          "code": "2B3P-SGLE",
+          "occupancy": "One person",
+          "spaces": 13,
+          "rate": 8500,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom. double bedroom",
+          "code": "2B3P-DBLE",
+          "occupancy": "Two person",
+          "spaces": 26,
+          "rate": 6750,
+          "period": "semester",
+          "form": "apartment"
+        },
+        {
+          "type": "Two-bedroom",
+          "code": "2B4P",
+          "occupancy": "Four person",
+          "spaces": 216,
+          "rate": 6750,
+          "period": "semester",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "air-conditioning"
+      ],
+      "meal": "full",
+      "noElevator": false,
+      "climate": "mixed",
+      "climateNote": "The published description does not clearly call this hall especially social or especially quiet, so both preferences keep it.",
+      "audiences": [
+        "freshman",
+        "continuing"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "A 14-story campus landmark, Webb Tower is USC’s tallest housing building, providing most residents spectacular views of the city or the campus. Each floor has just eight apartments, which fosters a tight-knit…",
+      "summary": "A 14-story apartment building. The page says it is next to Lyon Recreation Center and across the street from USC Village. Both freshmen and continuing undergraduates appear in the interactive-map categories."
+    },
+    {
+      "id": "windsor",
+      "name": "Windsor",
+      "code": "WIN",
+      "address": "1149 W. 28TH ST., LOS ANGELES, CA 90007",
+      "lat": 34.029491,
+      "lng": -118.28538,
+      "url": "https://housing.usc.edu/index.php/buildings/windsor/",
+      "rooms": [
+        {
+          "type": "One-bedroom",
+          "code": "1B1P",
+          "occupancy": "One person",
+          "spaces": 13,
+          "rate": 2000,
+          "period": "month",
+          "form": "apartment"
+        }
+      ],
+      "forms": [
+        "apartment"
+      ],
+      "features": [
+        "twelve-month-contract"
+      ],
+      "meal": null,
+      "noElevator": false,
+      "climate": "independent",
+      "climateNote": "The published description calls this a quiet two-story apartment building in a quiet and serene setting.",
+      "audiences": [
+        "grad-fy"
+      ],
+      "gih": false,
+      "unavailableFall2026": false,
+      "quote": "Windsor Apartments offers graduate residents the option of living in a quiet, two story apartment building. Each single-occupancy, one-bedroom apartment is comfortably furnished, with an air-conditioned living room…",
+      "summary": "A quiet one-bedroom graduate building north of campus. Listed for the full-year term."
+    }
+  ],
+  "anchors": [
+    {
+      "id": "leavey",
+      "name": "Leavey Library",
+      "kind": "library",
+      "lat": 34.0207,
+      "lng": -118.2839,
+      "source": "Street address 651 West 35th Street is from USC Libraries. The U.S. Census Bureau geocoder matched it to 35th Place, about a block from the Birnkrant map center."
+    },
+    {
+      "id": "doheny",
+      "name": "Doheny Memorial Library",
+      "kind": "library",
+      "lat": 34.02094,
+      "lng": -118.28473,
+      "source": "Street address 3550 Trousdale Parkway is from USC Libraries. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "ssl",
+      "name": "Science & Engineering Library",
+      "kind": "library",
+      "lat": 34.0197,
+      "lng": -118.28856,
+      "source": "Geocoded from the public street address 910 Bloom Walk, standing in for the science and engineering library area on the southwest side of campus."
+    },
+    {
+      "id": "lyon",
+      "name": "Lyon Center",
+      "kind": "rec",
+      "lat": 34.02394,
+      "lng": -118.28691,
+      "source": "Geocoded from 1026 West 34th Street. The result sits beside the Webb Tower housing-map coordinate, which matches the Webb page saying the tower is next to Lyon Recreation Center."
+    },
+    {
+      "id": "galen",
+      "name": "Galen Center",
+      "kind": "athletics",
+      "lat": 34.02184,
+      "lng": -118.27995,
+      "source": "Street address 3400 South Figueroa Street. Coordinates are from the U.S. Census Bureau geocoder, at Jefferson Boulevard and Figueroa Street."
+    },
+    {
+      "id": "rth",
+      "name": "Ronald Tutor Hall",
+      "kind": "school",
+      "lat": 34.02026,
+      "lng": -118.29006,
+      "source": "Street address 3710 South McClintock Avenue. Coordinates are from the U.S. Census Bureau geocoder, just north of Parkside."
+    },
+    {
+      "id": "olin",
+      "name": "Olin Hall",
+      "kind": "school",
+      "lat": 34.02112,
+      "lng": -118.28952,
+      "source": "Street address 3650 McClintock Avenue. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "asc",
+      "name": "Annenberg School for Communication and Journalism",
+      "kind": "school",
+      "lat": 34.02183,
+      "lng": -118.2868,
+      "source": "Street address 3502 Watt Way. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "sca",
+      "name": "School of Cinematic Arts",
+      "kind": "school",
+      "lat": 34.02349,
+      "lng": -118.2859,
+      "source": "Street address 900 West 34th Street. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "watt",
+      "name": "Watt Hall",
+      "kind": "school",
+      "lat": 34.01919,
+      "lng": -118.28729,
+      "source": "Street address 850 West 37th Street. Coordinates are from the U.S. Census Bureau geocoder, on the south side where architecture and art classes cluster."
+    },
+    {
+      "id": "iyh",
+      "name": "Iovine and Young Hall",
+      "kind": "school",
+      "lat": 34.01983,
+      "lng": -118.29034,
+      "source": "Street address 3780 McClintock Avenue. Coordinates are from the U.S. Census Bureau geocoder, next to Parkside."
+    },
+    {
+      "id": "thornton",
+      "name": "Thornton School of Music",
+      "kind": "school",
+      "lat": 34.02293,
+      "lng": -118.28467,
+      "source": "Street address 840 West 34th Street. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "kdc",
+      "name": "Glorya Kaufman International Dance Center",
+      "kind": "school",
+      "lat": 34.0231,
+      "lng": -118.28476,
+      "source": "Street address 849 West 34th Street. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "gould",
+      "name": "Gould School of Law",
+      "kind": "school",
+      "lat": 34.01841,
+      "lng": -118.28476,
+      "source": "Street address 699 Exposition Boulevard. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "bridge",
+      "name": "Bridge Hall",
+      "kind": "school",
+      "lat": 34.0192,
+      "lng": -118.28586,
+      "source": "Street address 3670 Trousdale Parkway, a Marshall classroom building. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "lewis",
+      "name": "Ralph and Goldy Lewis Hall",
+      "kind": "school",
+      "lat": 34.01942,
+      "lng": -118.28337,
+      "source": "Street address 650 Childs Way. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "taper",
+      "name": "Taper Hall",
+      "kind": "school",
+      "lat": 34.0211,
+      "lng": -118.28479,
+      "source": "Street address 3501 Trousdale Parkway. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "tcc",
+      "name": "Ronald Tutor Campus Center",
+      "kind": "student",
+      "lat": 34.02019,
+      "lng": -118.28537,
+      "source": "Street address 3607 Trousdale Parkway. Coordinates are from the U.S. Census Bureau geocoder."
+    },
+    {
+      "id": "engemann",
+      "name": "Engemann Student Health Center",
+      "kind": "health",
+      "lat": 34.02446,
+      "lng": -118.28779,
+      "source": "Street address 1031 West 34th Street. Coordinates are from the U.S. Census Bureau geocoder and nearly match the Webb Tower map center."
+    },
+    {
+      "id": "village",
+      "name": "USC Village",
+      "kind": "village",
+      "lat": 34.025188,
+      "lng": -118.284943,
+      "source": "Coordinates are the average of the five USC Village residential-college centers on the Housing interactive map, not the door of one shop."
+    },
+    {
+      "id": "evk",
+      "name": "Everybody's Kitchen",
+      "kind": "dining",
+      "lat": 34.021035,
+      "lng": -118.282098,
+      "source": "The New North page says Everybody's Kitchen is in EVK-NEW. This point uses the New North housing-map center."
+    },
+    {
+      "id": "village-dining",
+      "name": "USC Village Dining Hall",
+      "kind": "dining",
+      "lat": 34.025766,
+      "lng": -118.285793,
+      "source": "The McCarthy Honors page says the ground floor is the USC Village Dining Hall. This point uses that building's housing-map center."
+    },
+    {
+      "id": "parkside-dining",
+      "name": "Parkside Residential Dining Hall",
+      "kind": "dining",
+      "lat": 34.018893,
+      "lng": -118.290326,
+      "source": "The Webb page lists Parkside Residential Dining Hall as one of three residential dining halls. The door is not geocoded separately, so this point is the average of the three Parkside housing-map centers."
+    },
+    {
+      "id": "gate-jh",
+      "name": "Jefferson Boulevard & Hoover Street",
+      "kind": "gate",
+      "lat": 34.02376,
+      "lng": -118.28399,
+      "source": "Intersection coordinates from the U.S. Census Bureau geocoder, used as an approximate north campus entrance."
+    },
+    {
+      "id": "gate-jf",
+      "name": "Jefferson Boulevard & Figueroa Street",
+      "kind": "gate",
+      "lat": 34.02192,
+      "lng": -118.27998,
+      "source": "Intersection coordinates from the U.S. Census Bureau geocoder, used as an approximate northeast campus entrance."
+    },
+    {
+      "id": "gate-ef",
+      "name": "Exposition Boulevard & Figueroa Street",
+      "kind": "gate",
+      "lat": 34.01843,
+      "lng": -118.2822,
+      "source": "Intersection coordinates from the U.S. Census Bureau geocoder, used as an approximate southeast campus entrance."
+    },
+    {
+      "id": "gate-jv",
+      "name": "Jefferson Boulevard & Vermont Avenue",
+      "kind": "gate",
+      "lat": 34.0255,
+      "lng": -118.29154,
+      "source": "Intersection coordinates from the U.S. Census Bureau geocoder, used as an approximate northwest campus entrance."
+    },
+    {
+      "id": "gate-ev",
+      "name": "Exposition Boulevard & Vermont Avenue",
+      "kind": "gate",
+      "lat": 34.01816,
+      "lng": -118.29154,
+      "source": "Intersection coordinates from the U.S. Census Bureau geocoder, used as an approximate southwest campus entrance."
+    },
+    {
+      "id": "gate-34",
+      "name": "34th Street & Figueroa Street",
+      "kind": "gate",
+      "lat": 34.02109,
+      "lng": -118.2805,
+      "source": "Intersection coordinates from the U.S. Census Bureau geocoder, used as an approximate east campus entrance."
+    }
+  ],
+  "goals": [
+    {
+      "id": "viterbi",
+      "group": "career",
+      "label": "Engineering, computing, or a related field",
+      "anchors": [
+        "rth",
+        "olin",
+        "ssl"
+      ]
+    },
+    {
+      "id": "marshall",
+      "group": "career",
+      "label": "Business",
+      "anchors": [
+        "bridge",
+        "tcc"
+      ]
+    },
+    {
+      "id": "annenberg",
+      "group": "career",
+      "label": "Communication, journalism, or public relations",
+      "anchors": [
+        "asc",
+        "tcc"
+      ]
+    },
+    {
+      "id": "sca",
+      "group": "career",
+      "label": "Film and television production",
+      "anchors": [
+        "sca"
+      ]
+    },
+    {
+      "id": "roski",
+      "group": "career",
+      "label": "Architecture, art, or design",
+      "anchors": [
+        "watt",
+        "iyh"
+      ]
+    },
+    {
+      "id": "thornton",
+      "group": "career",
+      "label": "Music, dance, or performance",
+      "anchors": [
+        "thornton",
+        "kdc"
+      ]
+    },
+    {
+      "id": "gould",
+      "group": "career",
+      "label": "Law",
+      "anchors": [
+        "gould"
+      ]
+    },
+    {
+      "id": "price",
+      "group": "career",
+      "label": "Public policy",
+      "anchors": [
+        "lewis"
+      ]
+    },
+    {
+      "id": "dornsife",
+      "group": "career",
+      "label": "Letters, arts, and sciences",
+      "anchors": [
+        "doheny",
+        "taper",
+        "leavey"
+      ]
+    },
+    {
+      "id": "health",
+      "group": "career",
+      "label": "Health, pre-med, or public health",
+      "anchors": [
+        "engemann",
+        "lyon"
+      ]
+    },
+    {
+      "id": "research",
+      "group": "life",
+      "label": "Go deeper into research",
+      "anchors": [
+        "doheny",
+        "leavey",
+        "ssl"
+      ]
+    },
+    {
+      "id": "startup",
+      "group": "life",
+      "label": "Build a product or start something",
+      "anchors": [
+        "iyh",
+        "bridge",
+        "tcc"
+      ]
+    },
+    {
+      "id": "service",
+      "group": "life",
+      "label": "Take part in campus and community life",
+      "anchors": [
+        "tcc",
+        "village"
+      ]
+    },
+    {
+      "id": "wellness",
+      "group": "life",
+      "label": "Stay physically and mentally well",
+      "anchors": [
+        "lyon",
+        "engemann",
+        "village"
+      ]
+    },
+    {
+      "id": "create",
+      "group": "life",
+      "label": "Keep making creative work",
+      "anchors": [
+        "sca",
+        "thornton",
+        "watt"
+      ]
+    },
+    {
+      "id": "global",
+      "group": "life",
+      "label": "Spend time with people from different backgrounds",
+      "anchors": [
+        "asc",
+        "village"
+      ]
+    },
+    {
+      "id": "libraries",
+      "group": "interest",
+      "label": "Spend a lot of time in libraries",
+      "anchors": [
+        "leavey",
+        "doheny"
+      ]
+    },
+    {
+      "id": "fitness",
+      "group": "interest",
+      "label": "Work out regularly",
+      "anchors": [
+        "lyon",
+        "village"
+      ]
+    },
+    {
+      "id": "shows",
+      "group": "interest",
+      "label": "See performances and exhibitions",
+      "anchors": [
+        "thornton",
+        "kdc",
+        "watt"
+      ]
+    },
+    {
+      "id": "sports",
+      "group": "interest",
+      "label": "Watch games or play sports",
+      "anchors": [
+        "galen"
+      ]
+    },
+    {
+      "id": "village-life",
+      "group": "interest",
+      "label": "Eat and shop at USC Village",
+      "anchors": [
+        "village"
+      ]
+    },
+    {
+      "id": "activities",
+      "group": "interest",
+      "label": "Student activities",
+      "anchors": [
+        "tcc"
+      ]
+    }
+  ],
+  "llcs": [
+    {
+      "id": "annenberg",
+      "name": "Annenberg Communications",
+      "buildings": [
+        "annenberg-house"
+      ],
+      "standings": [
+        "continuing",
+        "transfer",
+        "graduate"
+      ],
+      "note": "The community table lists Annenberg House. That building page says it is unavailable for summer and fall 2026 because of renovations."
+    },
+    {
+      "id": "firstgen",
+      "name": "First Generation Plus",
+      "buildings": [
+        "birnkrant-residential-college"
+      ],
+      "standings": [
+        "freshman"
+      ],
+      "note": "The location is Birnkrant Residential College. The page says it is mainly for incoming freshmen."
+    },
+    {
+      "id": "gih",
+      "name": "Gender-Inclusive",
+      "buildings": [
+        "cardinal-gardens-2",
+        "century",
+        "usc-village-building-9"
+      ],
+      "standings": [
+        "freshman",
+        "transfer",
+        "continuing"
+      ],
+      "note": "The community table lists Cardinal Gardens, Century Apartments, and Cowlings and Ilium. First-year Gender-Inclusive rooms are in Birnkrant, which is not one of those three buildings."
+    },
+    {
+      "id": "soph-honors",
+      "name": "Sophomore (Second Year) Honors",
+      "buildings": [
+        "usc-village-building-9"
+      ],
+      "standings": [
+        "continuing"
+      ],
+      "note": "The page says this is only for current McCarthy Honors freshmen who hold a qualifying scholarship and are participating in University Housing Renewal. This demo cannot review that eligibility."
+    },
+    {
+      "id": "sustain",
+      "name": "Sustainable Living",
+      "buildings": [
+        "cardinal-n-gold"
+      ],
+      "standings": [
+        "transfer",
+        "continuing"
+      ],
+      "note": "The location is Cardinal 'N Gold. The page says it is mainly for continuing and transfer undergraduates."
+    },
+    {
+      "id": "veteran",
+      "name": "Veteran Housing",
+      "buildings": [
+        "adx",
+        "stardust"
+      ],
+      "standings": [
+        "freshman",
+        "transfer",
+        "continuing",
+        "graduate"
+      ],
+      "note": "The page says both graduate and undergraduate students may apply. The locations are ADX and Stardust Apartments."
+    }
+  ],
+  "roommates": [
+    {
+      "id": "maya",
+      "name": "Maya Chen",
+      "screen": "maya",
+      "groupCode": "MAYA-YUAN",
+      "standing": "continuing",
+      "gender": "female",
+      "gih": false,
+      "mbti": "ENFP",
+      "sleep": "mid",
+      "clean": "high",
+      "study": "mix",
+      "noise": "social",
+      "guests": "some",
+      "pets": "ok",
+      "blurb": "Communications student who goes to performances at night and wants shared spaces kept tidy. Demo group code MAYA-YUAN."
+    },
+    {
+      "id": "leo",
+      "name": "Leo Park",
+      "screen": "leopark",
+      "standing": "freshman",
+      "gender": "male",
+      "gih": false,
+      "mbti": "INTJ",
+      "sleep": "late",
+      "clean": "mid",
+      "study": "room",
+      "noise": "quiet",
+      "guests": "rare",
+      "pets": "no",
+      "blurb": "Plans to study computing, usually does homework in the room, and does not want guests at night."
+    },
+    {
+      "id": "sofia",
+      "name": "Sofia Nguyen",
+      "screen": "sofian",
+      "standing": "freshman",
+      "gender": "female",
+      "gih": false,
+      "mbti": "ESFJ",
+      "sleep": "early",
+      "clean": "high",
+      "study": "library",
+      "noise": "social",
+      "guests": "some",
+      "pets": "ok",
+      "blurb": "Gets up early for the library and likes eating with people in the building on weekends."
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Ellis",
+      "screen": "jordan",
+      "standing": "freshman",
+      "gender": "unspecified",
+      "gih": true,
+      "mbti": "INFP",
+      "sleep": "late",
+      "clean": "mid",
+      "study": "mix",
+      "noise": "quiet",
+      "guests": "rare",
+      "pets": "ok",
+      "blurb": "Has requested Gender-Inclusive Housing and wants the room quiet at night."
+    },
+    {
+      "id": "priya",
+      "name": "Priya Shah",
+      "screen": "priya",
+      "standing": "freshman",
+      "gender": "female",
+      "gih": false,
+      "mbti": "ENTJ",
+      "sleep": "early",
+      "clean": "high",
+      "study": "room",
+      "noise": "balanced",
+      "guests": "rare",
+      "pets": "no",
+      "blurb": "Engineering student with an early schedule who needs a clear desk."
+    },
+    {
+      "id": "noah",
+      "name": "Noah Brooks",
+      "screen": "noahb",
+      "standing": "continuing",
+      "gender": "male",
+      "gih": false,
+      "mbti": "ESTP",
+      "sleep": "late",
+      "clean": "low",
+      "study": "library",
+      "noise": "social",
+      "guests": "often",
+      "pets": "ok",
+      "blurb": "Often meets people at USC Village, brings friends back, and usually studies outside the room."
+    },
+    {
+      "id": "hana",
+      "name": "Hana Ito",
+      "screen": "hana",
+      "standing": "graduate",
+      "gender": "female",
+      "gih": false,
+      "mbti": "ISTJ",
+      "sleep": "early",
+      "clean": "high",
+      "study": "room",
+      "noise": "quiet",
+      "guests": "rare",
+      "pets": "no",
+      "blurb": "Law graduate student who needs quiet evenings and a regular desk."
+    },
+    {
+      "id": "omar",
+      "name": "Omar Haddad",
+      "screen": "omar",
+      "standing": "transfer",
+      "gender": "male",
+      "gih": false,
+      "mbti": "INFJ",
+      "sleep": "mid",
+      "clean": "high",
+      "study": "mix",
+      "noise": "quiet",
+      "guests": "some",
+      "pets": "no",
+      "blurb": "Transfer student who wants a quiet apartment and is open to cooking together sometimes."
+    },
+    {
+      "id": "elena",
+      "name": "Elena Rossi",
+      "screen": "elenar",
+      "standing": "freshman",
+      "gender": "female",
+      "gih": true,
+      "mbti": "ENFJ",
+      "sleep": "mid",
+      "clean": "mid",
+      "study": "library",
+      "noise": "social",
+      "guests": "some",
+      "pets": "ok",
+      "blurb": "Requested Gender-Inclusive Housing, spends days in the library, and will join floor events at night."
+    },
+    {
+      "id": "chris",
+      "name": "Chris Alvarez",
+      "screen": "chrisal",
+      "standing": "continuing",
+      "gender": "male",
+      "gih": true,
+      "mbti": "ENTP",
+      "sleep": "late",
+      "clean": "mid",
+      "study": "mix",
+      "noise": "balanced",
+      "guests": "some",
+      "pets": "ok",
+      "blurb": "Continuing undergraduate who has requested Gender-Inclusive Housing and keeps a late schedule."
+    }
+  ],
+  "samples": [
+    {
+      "id": "ke",
+      "name": "Tommy Trojan",
+      "screen": "tommy",
+      "blurb": "First-year engineering student who wants a traditional hall within reach of labs and the student center.",
+      "category": "new",
+      "emergencyName": "Morgan Hale",
+      "emergencyPhone": "213-555-0148",
+      "term": "ug-ay",
+      "standing": "freshman",
+      "honors": false,
+      "family": false,
+      "gender": "female",
+      "roomType": "traditional",
+      "rateMax": 6750,
+      "elevator": false,
+      "osas": false,
+      "llc": "",
+      "career": "viterbi",
+      "life": "research",
+      "interest": "activities",
+      "clean": "mid",
+      "noise": "social",
+      "guests": "some",
+      "study": "mix",
+      "sleep": "early",
+      "pets": "no",
+      "dining": 20,
+      "gate": 25
+    },
+    {
+      "id": "xia",
+      "name": "Hecuba",
+      "screen": "hecuba",
+      "blurb": "First-year film student who wants a quieter building and an apartment with a kitchen.",
+      "category": "new",
+      "emergencyName": "Elena Ward",
+      "emergencyPhone": "213-555-0172",
+      "term": "ug-ay",
+      "standing": "freshman",
+      "honors": false,
+      "family": false,
+      "gender": "female",
+      "roomType": "apartment",
+      "rateMax": 8500,
+      "elevator": false,
+      "osas": false,
+      "llc": "",
+      "career": "sca",
+      "life": "create",
+      "interest": "libraries",
+      "clean": "high",
+      "noise": "quiet",
+      "guests": "rare",
+      "study": "room",
+      "sleep": "late",
+      "pets": "no",
+      "dining": 20,
+      "gate": 25
+    },
+    {
+      "id": "yuan",
+      "name": "Traveler",
+      "screen": "traveler",
+      "blurb": "Continuing undergraduate who wants Sustainable Living and to bind a roommate group with Maya.",
+      "category": "continuing-nonres",
+      "emergencyName": "Noah Hale",
+      "emergencyPhone": "213-555-0190",
+      "term": "ug-ay",
+      "standing": "continuing",
+      "honors": false,
+      "family": false,
+      "gender": "female",
+      "roomType": "apartment",
+      "rateMax": 8500,
+      "elevator": false,
+      "osas": false,
+      "llc": "sustain",
+      "career": "annenberg",
+      "life": "service",
+      "interest": "village-life",
+      "clean": "high",
+      "noise": "balanced",
+      "guests": "some",
+      "study": "mix",
+      "sleep": "mid",
+      "pets": "ok",
+      "dining": 20,
+      "gate": 25
+    }
+  ],
+  "terms": [
+    {
+      "id": "ug-ay",
+      "label": "Academic Year 2026–2027",
+      "dates": "August 19, 2026 – May 12, 2027",
+      "who": [
+        "freshman",
+        "transfer",
+        "continuing"
+      ],
+      "preferenceCount": 5,
+      "ratePeriod": "semester"
+    },
+    {
+      "id": "ug-spring",
+      "label": "Spring 2027",
+      "dates": "January 8, 2027 – May 12, 2027",
+      "who": [
+        "freshman",
+        "transfer",
+        "continuing"
+      ],
+      "preferenceCount": 5,
+      "ratePeriod": "semester"
+    },
+    {
+      "id": "grad-ay",
+      "label": "Graduate Academic Year 2026–2027",
+      "dates": "August 10, 2026 – May 12, 2027",
+      "who": [
+        "graduate"
+      ],
+      "preferenceCount": 4,
+      "ratePeriod": "month"
+    },
+    {
+      "id": "grad-fy",
+      "label": "Graduate Full Year 2026–2027",
+      "dates": "August 10, 2026 – July 31, 2027",
+      "who": [
+        "graduate"
+      ],
+      "preferenceCount": 4,
+      "ratePeriod": "month"
+    },
+    {
+      "id": "law",
+      "label": "Law Housing 2026–2027",
+      "dates": "August 10, 2026 – May 18, 2027",
+      "who": [
+        "graduate"
+      ],
+      "preferenceCount": 4,
+      "ratePeriod": "month"
+    }
+  ]
+}

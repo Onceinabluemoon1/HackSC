@@ -40,6 +40,11 @@ button{font-family:inherit;cursor:pointer}
 .links a{padding:8px 12px;border-radius:999px;font-size:14px;opacity:.9}
 .links a:hover{background:rgba(255,255,255,.12);opacity:1}
 .signin{background:var(--gold);color:var(--cardinal);border:none;border-radius:999px;padding:8px 16px;font-weight:600;font-size:14px}
+.nav-tabs{max-width:1100px;margin:0 auto;padding:0 16px 12px;display:flex;gap:8px;flex-wrap:wrap}
+.nav-tabs a{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;font-size:14px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,.28)}
+.nav-tabs a:hover{background:rgba(255,255,255,.12)}
+.nav-tabs a[aria-current="page"]{background:var(--gold);color:var(--cardinal);border-color:var(--gold)}
+
 
 .burger{width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0}
 .burger:hover{background:rgba(255,255,255,.16)}
@@ -163,7 +168,13 @@ body.dorms-open{overflow:hidden}
     <a class="logo" href="#top"><span class="m">TM</span>TrojanMatch</a>
   </div>
   <button class="signin" data-tab="Sign in">Sign in</button>
-</div></nav>
+</div>
+  <div class="nav-tabs" role="navigation" aria-label="Sections">
+    <a href="#top" data-tab="Main" aria-current="page"><i class="ti ti-home"></i>Main</a>
+    <a href="#clubs" data-tab="Club matching"><i class="ti ti-users-group"></i>Club matching</a>
+    <a href="#peers" data-tab="Peer matching"><i class="ti ti-users"></i>Peer matching</a>
+  </div>
+</nav>
 
 <dialog class="menu" id="menu" aria-labelledby="menuTitle">
   <div class="menu-head"><div><div class="menu-kicker">TrojanMatch</div><div class="menu-title" id="menuTitle">Choose your match</div></div><button class="menu-x" id="menuClose" aria-label="Close menu"><i class="ti ti-x"></i></button></div>
@@ -379,6 +390,7 @@ function openDorms(){
   dormsPanel.hidden=false;
   document.body.classList.add('dorms-open');
   if(location.hash!=='#dorms')history.pushState(null,'','#dorms');
+  markSection('');
 }
 function closeDorms(){
   if(dormsPanel.hidden)return;
@@ -386,19 +398,29 @@ function closeDorms(){
   document.body.classList.remove('dorms-open');
   if(location.hash==='#dorms')history.replaceState(null,'',location.pathname+location.search);
 }
+function markSection(name){
+  document.querySelectorAll('.nav-tabs a').forEach(a=>{
+    if(name&&a.dataset.tab===name)a.setAttribute('aria-current','page');
+    else a.removeAttribute('aria-current');
+  });
+}
 document.querySelectorAll('[data-tab]').forEach(a=>a.addEventListener('click',e=>{
   e.preventDefault();
-  if(a.getAttribute('href')==='#dorms'){openDorms();return;}
+  const tab=a.dataset.tab;
+  if(a.getAttribute('href')==='#dorms'){openDorms();markSection('');return;}
   closeDorms();
-  toast.textContent=a.dataset.tab+' tab is coming soon';
+  if(tab==='Main'){markSection('Main');window.scrollTo(0,0);return;}
+  markSection(tab==='Club matching'||tab==='Peer matching'?tab:'Main');
+  toast.textContent=tab+' tab is coming soon';
   toast.classList.add('show');
   clearTimeout(tt);
   tt=setTimeout(()=>toast.classList.remove('show'),1800);
 }));
 window.addEventListener('resize',()=>{if(!dormsPanel.hidden)placeDorms();});
 window.addEventListener('hashchange',()=>{if(location.hash==='#dorms')openDorms();else closeDorms();});
-document.querySelectorAll('a[href="#top"],a[href="#play"],a[href="#features"]').forEach(a=>a.addEventListener('click',()=>closeDorms()));
+document.querySelectorAll('a[href="#top"],a[href="#play"],a[href="#features"]').forEach(a=>a.addEventListener('click',()=>{closeDorms();if(!a.dataset.tab)markSection('Main');}));
 if(location.hash==='#dorms')openDorms();
+else markSection('Main');
 const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)en.target.classList.add('in');}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 

@@ -42,12 +42,6 @@ const appRoot = document.querySelector("#app");
 let catalog = null;
 let state = loadState();
 
-document.querySelector("#reset-app").addEventListener("click", () => {
-  if (!confirm("Clear the demo progress stored in this browser?")) return;
-  state = blankState();
-  saveState();
-  render();
-});
 appRoot.addEventListener("click", onClick);
 appRoot.addEventListener("change", onField);
 appRoot.addEventListener("input", onField);
@@ -136,6 +130,14 @@ function onClick(event) {
   const button = event.target.closest("[data-action]");
   if (!button) return;
   const action = button.dataset.action;
+  if (action === "reset") {
+    if (!confirm("Clear the demo progress stored in this browser?")) return;
+    state = blankState();
+    saveState();
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
   state.error = "";
   if (action === "start-blank") {
     const step = state.step;
@@ -313,6 +315,8 @@ function render() {
     const enabled = itemIndex <= state.maxReached && itemIndex !== index;
     return `<button type="button" data-action="goto" data-step="${id}" ${enabled ? "" : "disabled"} ${itemIndex === index ? 'aria-current="step"' : ""}>${itemIndex + 1}. ${label}</button>`;
   }).join("")}</nav>`;
+  const reset = `<button type="button" class="text-button reset" id="reset-app" data-action="reset">Start over</button>`;
+  const steps = `<div class="step-row">${state.step === "done" ? "" : stepper}${reset}</div>`;
   const body = {
     welcome: renderWelcome,
     profile: renderProfile,
@@ -329,7 +333,7 @@ function render() {
     submit: renderSubmit,
     done: renderDone,
   }[state.step]();
-  appRoot.innerHTML = `${state.step === "done" ? "" : stepper}${body}`;
+  appRoot.innerHTML = `${steps}${body}`;
 }
 
 function shell(title, lede, inner, actions) {

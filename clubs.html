@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trojan Club Finder</title>
+  <script>if(new URLSearchParams(location.search).has("embed"))document.documentElement.classList.add("embed");</script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    .intro{display:none}
+    .embed body>header,.embed body>footer{display:none}
+    .embed .intro{display:block;max-width:900px;margin:0 auto;padding:28px 20px 0}
+    .intro .eyebrow{display:inline-flex;align-items:center;gap:6px;font:600 12px Inter,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#990000;background:rgba(255,204,0,.28);padding:4px 10px;border-radius:999px}
+    .intro h2{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:clamp(26px,4vw,34px);color:#1f1a16;margin:10px 0 6px;line-height:1.15}
+    .intro p{font:400 15px/1.55 Inter,system-ui,sans-serif;color:#5e574f;margin:0;max-width:560px}
     :root {
       --cardinal: #990000;
       --cardinal-dark: #730000;
@@ -132,6 +140,43 @@
       font-weight: bold;
       letter-spacing: 2px;
     }
+    /* ---------- Embedded in TrojanMatch: match the app's look ---------- */
+    .embed body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#fbf7ef;color:#1f1a16;-webkit-font-smoothing:antialiased}
+    .embed main{max-width:900px;padding:20px 20px 48px;background:transparent}
+    .embed section{background:#fff;border:1px solid rgba(60,30,10,.10);border-radius:22px;padding:24px;margin-bottom:18px}
+    .embed section>h2{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:22px;color:#1f1a16;margin-bottom:6px}
+    .embed section>p{color:#5e574f;font-size:14px;line-height:1.55}
+    .embed label{font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:13px;color:#1f1a16;margin:16px 0 8px}
+    .embed input[type="text"],.embed select{height:46px;border-radius:999px;border:1px solid rgba(60,30,10,.18);background-color:#fff;padding:0 18px;font:400 14px Inter,system-ui,sans-serif;color:#1f1a16;transition:border-color .15s, box-shadow .15s}
+    .embed select{-webkit-appearance:none;appearance:none;padding-right:42px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23990000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center}
+    .embed input[type="text"]:focus,.embed select:focus{outline:none;border-color:#990000;box-shadow:0 0 0 3px rgba(153,0,0,.15)}
+    .embed .checkbox-grid{display:flex;flex-wrap:wrap;gap:8px}
+    .embed .checkbox-grid label{position:relative;display:inline-flex;align-items:center;gap:6px;margin:0;padding:8px 14px;border-radius:999px;border:1px solid rgba(60,30,10,.18);background:#fff;font-weight:500;font-size:13px;color:#1f1a16;cursor:pointer;user-select:none;transition:all .15s}
+    .embed .checkbox-grid label::before{content:"+";font-weight:700;color:#990000;width:10px;text-align:center}
+    .embed .checkbox-grid label:hover{border-color:#990000;transform:translateY(-1px)}
+    .embed .checkbox-grid input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+    .embed .checkbox-grid label:has(input:checked){background:#990000;border-color:#990000;color:#fff}
+    .embed .checkbox-grid label:has(input:checked)::before{content:"\2713";color:#FFCC00}
+    .embed .checkbox-grid label:has(input:focus-visible){box-shadow:0 0 0 3px rgba(153,0,0,.3)}
+    .embed button{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:#990000;color:#fff;border:1.5px solid #990000;padding:12px 24px;font:600 15px Inter,system-ui,sans-serif;margin-top:22px;transition:background .15s, transform .1s}
+    .embed button:hover{background:#6b0000}
+    .embed button:active{transform:scale(.97)}
+    .embed section+section button{background:transparent;color:#990000}
+    .embed section+section button:hover{background:rgba(153,0,0,.06)}
+    .embed #results{gap:12px;margin-top:22px}
+    .embed #results>p{font-size:14px;color:#5e574f}
+    .embed .club-card{background:#fff;border:1px solid rgba(60,30,10,.12);border-left:1px solid rgba(60,30,10,.12);border-radius:18px;padding:16px 18px;box-shadow:none;transition:transform .2s, border-color .2s}
+    .embed .club-card:hover{transform:translateY(-3px);border-color:#990000}
+    .embed .club-card h3{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:18px;color:#1f1a16;margin-bottom:8px}
+    .embed .club-card .match{background:rgba(255,204,0,.35);color:#990000;font:700 11px Inter,system-ui,sans-serif;padding:3px 10px;border-radius:999px}
+    .embed .badge{font:600 11px Inter,system-ui,sans-serif;border-radius:999px;padding:3px 9px}
+    .embed .club-card .desc{font-size:13px;color:#5e574f;line-height:1.5}
+    .embed .club-card .info{font:400 12px Inter,system-ui,sans-serif;color:#8c847a}
+    .embed #randomBox{border-radius:18px;border:1.5px dashed #FFCC00;background:#fffaf0}
+    .embed #randomBox h3{font-family:Fraunces,Georgia,serif;font-weight:800;color:#990000}
+    .embed .empty{font-style:normal;color:#8c847a;font-size:14px}
+    .embed .source{font-size:12px;color:#8c847a;margin-top:4px}
+    .embed a{color:#990000;font-weight:600}
   </style>
 </head>
 <body>
@@ -143,6 +188,8 @@
     </div>
     <div class="fight-on">✌ FIGHT ON!</div>
   </header>
+
+  <div class="intro"><span class="eyebrow">Club matching</span><h2>Clubs picked for you</h2><p>Tell us your year, free time, and interests. We'll match you with student orgs from EngageSC.</p></div>
 
   <main>
     <section>

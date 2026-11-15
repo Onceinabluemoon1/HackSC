@@ -1,4 +1,5 @@
 # TrojanMatch
+HACKATHON AI@USC 2026
 
 TrojanMatch is a student prototype from the AI@USC Hackathon 2026. It is a browser app for USC students to browse campus events and ride requests, rank a short list of student organizations, and walk through a housing-preference demo.
 

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trojan Club Finder</title>
+  <style>
+    :root {
+      --cardinal: #990000;
+      --cardinal-dark: #730000;
+      --gold: #FFCC00;
+      --cream: #FFF8E7;
+      --card-bg: #FFFDF5;
+      --border: #E8DCC0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Georgia, "Times New Roman", serif; background-color: var(--cream); color: #333; }
+
+    /* ---------- Top tab (cardinal red) ---------- */
+    header {
+      background-color: var(--cardinal);
+      color: white;
+      padding: 20px 40px;
+      border-bottom: 6px solid var(--gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    header h1 { font-size: 30px; letter-spacing: 1px; }
+    header h1 span { color: var(--gold); }
+    header p { font-size: 14px; opacity: 0.9; font-style: italic; }
+    .fight-on {
+      background-color: var(--gold);
+      color: var(--cardinal);
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+
+    /* ---------- Middle (cream) ---------- */
+    main { background-color: var(--cream); max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
+    section {
+      background-color: var(--card-bg);
+      border: 2px solid var(--border);
+      border-top: 5px solid var(--gold);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+    h2 { color: var(--cardinal); margin-bottom: 15px; }
+    label { font-weight: bold; display: block; margin: 12px 0 6px; font-family: Arial, sans-serif; }
+    input[type="text"], select {
+      width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 15px;
+    }
+    .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+    .checkbox-grid label { font-weight: normal; margin: 0; cursor: pointer; }
+    input[type="checkbox"] { accent-color: var(--cardinal); }
+
+    button {
+      background-color: var(--cardinal);
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 18px;
+    }
+    button:hover { background-color: var(--cardinal-dark); }
+
+    a { color: var(--cardinal); font-weight: bold; }
+
+    /* ---------- Results ---------- */
+    #results { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 15px; margin-top: 20px; }
+    .club-card {
+      background-color: white;
+      border-left: 6px solid var(--cardinal);
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+    .club-card h3 { margin-bottom: 6px; color: var(--cardinal); }
+    .club-card .match {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--cardinal);
+      font-weight: bold;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+      font-family: Arial, sans-serif;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-left: 6px;
+    }
+    .badge.open  { background-color: #E3F2E1; color: #2E6B2A; }
+    .badge.apply { background-color: #F7DCDC; color: var(--cardinal); }
+    .club-card .desc { font-size: 14px; margin-bottom: 8px; }
+    .club-card .info { font-size: 13px; color: #666; font-family: Arial, sans-serif; margin-bottom: 4px; }
+
+    /* ---------- Random interest ---------- */
+    #randomBox {
+      text-align: center;
+      margin-top: 20px;
+      padding: 25px;
+      background-color: #FFF1D6;
+      border: 2px dashed var(--gold);
+      border-radius: 10px;
+      display: none;
+    }
+    #randomBox h3 { font-size: 26px; color: var(--cardinal); margin-bottom: 8px; }
+    .empty { color: #888; font-style: italic; }
+
+    .source { font-size: 13px; color: #666; text-align: center; margin-top: -10px; }
+
+    footer {
+      background-color: var(--cardinal);
+      color: var(--gold);
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>Trojan <span>Club Finder</span></h1>
+      <p>Find your Trojan Family at USC.</p>
+    </div>
+    <div class="fight-on">✌ FIGHT ON!</div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Your Trojan Profile</h2>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Tommy Trojan">
+
+      <label for="year">Year</label>
+      <select id="year">
+        <option>Freshman</option>
+        <option>Sophomore</option>
+        <option>Junior</option>
+        <option>Senior</option>
+        <option>Grad Student</option>
+      </select>
+
+      <label for="time">How much time can you commit each week?</label>
+      <select id="time">
+        <option value="1">A little (1–2 hours)</option>
+        <option value="2">Some (3–5 hours)</option>
+        <option value="3">A lot (6+ hours)</option>
+      </select>
+
+      <label>Interests (pick any)</label>
+      <div class="checkbox-grid" id="interestList"></div>
+
+      <button onclick="findMatches()">Find My Clubs</button>
+
+      <div id="results"></div>
+    </section>
+
+    <section>
+      <h2>Discover Something New</h2>
+      <p>Not sure what you're into? Spin for a random interest and a USC club to try.</p>
+      <button onclick="randomInterest()">Generate Random Interest</button>
+
+      <div id="randomBox">
+        <h3 id="randomTitle"></h3>
+        <p id="randomDesc"></p>
+        <p id="randomClub" style="margin-top:10px;"></p>
+      </div>
+    </section>
+
+    <p class="source">
+      Club names and descriptions come from
+      <a href="https://engage.usc.edu/club_signup" target="_blank">EngageSC</a>,
+      USC's student organization directory.
+    </p>
+  </main>
+
+  <footer>FIGHT ON, TROJANS!</footer>
+
+  <script>
+    const interests = [
+      "Coding", "Engineering", "Space", "Art", "Photography", "Music",
+      "Theater", "Dance", "Film", "Writing", "Debate", "Gaming",
+      "Business", "Volunteering", "Environment", "Sports", "Languages"
+    ];
+
+    // Real USC clubs from EngageSC (engage.usc.edu).
+    // "time" is a rough estimate of weekly commitment: 1 = low, 2 = medium, 3 = high.
+    // "join": "open" = anyone can join, "apply" = application, audition, or tryout.
+    // Join types are best guesses - check each club's page to confirm.
+    const clubs = [
+      { name: "HackSC", tags: ["Coding", "Engineering", "Business"], time: 2, join: "apply",
+        desc: "A hackathon where 800+ hackers, designers, and visionaries spend a weekend building projects together.",
+        link: "https://hacksc.com" },
+      { name: "Association for Computing Machinery (ACM)", tags: ["Coding", "Engineering"], time: 2, join: "open",
+        desc: "USC's student chapter of ACM and the largest student-run computer science organization on campus.",
+        link: "http://www.uscacm.org/" },
+      { name: "Rocket Propulsion Laboratory", tags: ["Engineering", "Space"], time: 3, join: "apply",
+        desc: "A student-run lab that designs, builds, and launches high-performance rockets, and the first undergrad group to reach space.",
+        link: "http://uscrpl.com" },
+      { name: "VEX Robotics Team @ USC", tags: ["Engineering", "Coding"], time: 3, join: "apply",
+        desc: "A design team that builds robots for an international 2-minute robotics competition.",
+        link: "http://uscvex.github.io" },
+      { name: "Students for the Exploration and Development of Space (SEDS)", tags: ["Space", "Engineering"], time: 1, join: "open",
+        desc: "The home of space enthusiasm at USC, with industry speakers and rocket-launch watch parties.",
+        link: "https://engage.usc.edu/StudentsExplorationDevelopmentSpace/" },
+      { name: "Life Drawing Collective", tags: ["Art"], time: 2, join: "open",
+        desc: "Weekly figure drawing with live models, outdoor plein air painting, and artist demos.",
+        link: "https://engage.usc.edu/lifedrawing/" },
+      { name: "Fiber Arts Club at USC", tags: ["Art"], time: 1, join: "open",
+        desc: "Knitting, crochet, weaving, embroidery, and more, with a welcoming space for all skill levels.",
+        link: "https://engage.usc.edu/fac/" },
+      { name: "Photography at USC", tags: ["Photography", "Art"], time: 1, join: "open",
+        desc: "A tight-knit group of creatives who explore beautiful places and shoot together.",
+        link: "http://www.uscphotoclub.com" },
+      { name: "Troy Tones", tags: ["Music"], time: 2, join: "apply",
+        desc: "A co-ed a cappella group that prides itself on being a family.",
+        link: "http://troytones.org" },
+      { name: "The SoCal VoCals", tags: ["Music"], time: 3, join: "apply",
+        desc: "USC's premier a cappella group since 1996, performing pop music for audiences around the world.",
+        link: "https://engage.usc.edu/TheSocalVocals/" },
+      { name: "Trojan Marching Band", tags: ["Music", "Sports"], time: 3, join: "apply",
+        desc: "300+ students from nearly every major and 350+ performances a year, including game days.",
+        link: "https://uscband.usc.edu/" },
+      { name: "Brand New Theatre", tags: ["Theater", "Writing"], time: 3, join: "open",
+        desc: "Produces student-written plays: a One-Act Festival in fall and a full-length show in spring.",
+        link: "https://www.brandnewtheatreusc.com/" },
+      { name: "Impulse Theatre Company", tags: ["Theater"], time: 2, join: "apply",
+        desc: "Produces contemporary, realism-based plays focused on characters and relationships.",
+        link: "http://uscimpulse.squarespace.com" },
+      { name: "Break Through Hip Hop", tags: ["Dance", "Music"], time: 2, join: "apply",
+        desc: "A student-run, noncompetitive hip-hop dance team founded in 2006.",
+        link: "https://engage.usc.edu/BreakThroughHipHop/" },
+      { name: "Asian Pacific Cinema Association", tags: ["Film"], time: 2, join: "open",
+        desc: "Creative and professional opportunities for students interested in any part of the film industry.",
+        link: "https://uscapca.wixsite.com/site" },
+      { name: "Amplify Writers Collective", tags: ["Writing", "Film"], time: 1, join: "open",
+        desc: "Panels, workshops, and writers' groups about screenwriting and telling more diverse stories in Hollywood.",
+        link: "https://engage.usc.edu/Amplifyhasawebsiteinprogress/" },
+      { name: "Daily Trojan", tags: ["Writing", "Photography"], time: 3, join: "apply",
+        desc: "USC's student newspaper, written, edited, and managed by students.",
+        link: "https://dailytrojan.com" },
+      { name: "Trojan Debate Squad: British Parliamentary Team", tags: ["Debate"], time: 3, join: "open",
+        desc: "Weekly practice and British Parliamentary debate against universities across North America.",
+        link: "https://trojanbpdebate.com" },
+      { name: "Model United Nations of Southern California", tags: ["Debate", "Languages"], time: 2, join: "open",
+        desc: "Discuss, debate, and (theoretically) resolve the world's most pressing issues.",
+        link: "http://www.uscmun.org" },
+      { name: "SC Esports", tags: ["Gaming"], time: 1, join: "open",
+        desc: "A casual club for playing games and meeting new people at hosted events.",
+        link: "https://uscesports.weebly.com" },
+      { name: "Trojan Chess Club", tags: ["Gaming"], time: 1, join: "open",
+        desc: "Friendly games plus a competitive team that plays in local, national, and international tournaments.",
+        link: "https://sites.google.com/usc.edu/trojan-chess-club/home" },
+      { name: "180 Degrees Consulting", tags: ["Business", "Volunteering"], time: 2, join: "apply",
+        desc: "Part of the world's largest nonprofit consultancy, giving consulting help to nonprofits.",
+        link: "http://180degreesusc.org" },
+      { name: "Entrepreneurship & Innovation Student Association", tags: ["Business"], time: 1, join: "open",
+        desc: "A student-led community that supports founders and innovators.",
+        link: "https://engage.usc.edu/EISA/" },
+      { name: "American Red Cross at USC", tags: ["Volunteering"], time: 2, join: "open",
+        desc: "Blood drives, fundraisers, disaster relief, and preparedness education.",
+        link: "http://arcusc.org" },
+      { name: "Habitat for Humanity", tags: ["Volunteering", "Engineering"], time: 2, join: "open",
+        desc: "Full-day Saturday home builds with Habitat LA or Habitat SGV, twice a month.",
+        link: "https://engage.usc.edu/HabitatForHumanity/" },
+      { name: "SC Garden Club", tags: ["Environment", "Volunteering"], time: 1, join: "open",
+        desc: "Students who care about urban gardening and food justice and look after USC's on-campus community garden.",
+        link: "https://engage.usc.edu/club_signup" },
+      { name: "Environmental Student Assembly", tags: ["Environment"], time: 2, join: "apply",
+        desc: "USC's student government assembly for environmental and sustainability issues.",
+        link: "https://engage.usc.edu/club_signup" },
+      { name: "Trojan Climbing", tags: ["Sports"], time: 2, join: "open",
+        desc: "USC's only indoor and outdoor rock climbing club, open to every skill level.",
+        link: "https://engage.usc.edu/TrojanClimbing/" },
+      { name: "SC Women's Club Soccer", tags: ["Sports"], time: 3, join: "apply",
+        desc: "A competitive club team that plays nationally in fall and spring, with less commitment than D1.",
+        link: "https://engage.usc.edu/ScWomenSClubSoccer/" },
+      { name: "Men's Soccer Club", tags: ["Sports"], time: 3, join: "apply",
+        desc: "USC's official, highly competitive men's club soccer team, run by students.",
+        link: "https://uscmenssoccer.wordpress.com" },
+      { name: "American Sign Language Club", tags: ["Languages"], time: 1, join: "open",
+        desc: "Interactive lessons in beginner ASL and Deaf culture.",
+        link: "https://engage.usc.edu/AmericanSignLanguageClub/" },
+      { name: "Chinese English Language Exchange", tags: ["Languages"], time: 1, join: "open",
+        desc: "Language and culture exchange between Chinese speakers learning English and English speakers learning Chinese.",
+        link: "https://engage.usc.edu/ChineseEnglishLanguageExchange/" }
+    ];
+
+    const interestDescriptions = {
+      Coding: "Build apps, games, and websites with fellow Trojans.",
+      Engineering: "Design, build, and test real hardware projects.",
+      Space: "Rockets, astronauts, and everything beyond the sky.",
+      Art: "Draw, paint, knit, and make things with your hands.",
+      Photography: "Capture campus moments and game days.",
+      Music: "Sing, play, and perform for the Trojan Family.",
+      Theater: "Act, direct, or work behind the scenes.",
+      Dance: "Move, perform, and stay active with a crew.",
+      Film: "Make movies in the home of a world-famous film school.",
+      Writing: "Report the news, write scripts, or tell stories.",
+      Debate: "Sharpen your arguments and public speaking.",
+      Gaming: "Compete, strategize, and make friends over games.",
+      Business: "Pitch ideas, consult, and launch your own startup.",
+      Volunteering: "Give back to the Los Angeles community.",
+      Environment: "Help make campus and LA greener.",
+      Sports: "Stay active and compete for the Cardinal & Gold.",
+      Languages: "Learn a new language and meet Trojans from around the world."
+    };
+
+    const interestList = document.getElementById("interestList");
+    interests.forEach(i => {
+      interestList.innerHTML += `<label><input type="checkbox" value="${i}"> ${i}</label>`;
+    });
+
+    const timeLabels = { 1: "Low", 2: "Medium", 3: "High" };
+    const joinLabels = { open: "Open to all", apply: "Application" };
+
+    function joinBadge(club) {
+      return `<span class="badge ${club.join}">${joinLabels[club.join]}</span>`;
+    }
+
+    function findMatches() {
+      const name = document.getElementById("name").value.trim() || "Trojan";
+      const time = parseInt(document.getElementById("time").value);
+      const picked = [...document.querySelectorAll("#interestList input:checked")].map(cb => cb.value);
+      const results = document.getElementById("results");
+
+      if (picked.length === 0) {
+        results.innerHTML = `<p class="empty">Pick at least one interest to get matches.</p>`;
+        return;
+      }
+
+      const scored = clubs.map(club => {
+        const shared = club.tags.filter(t => picked.includes(t));
+        let score = (shared.length / club.tags.length) * 80;   // interest overlap
+        if (club.time <= time) score += 20;                     // fits schedule
+        else score -= (club.time - time) * 10;                  // too demanding
+        return { ...club, shared, score: Math.max(0, Math.round(score)) };
+      })
+      .filter(c => c.shared.length > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 6);
+
+      if (scored.length === 0) {
+        results.innerHTML = `<p class="empty">No matches yet. Try the random generator below!</p>`;
+        return;
+      }
+
+      results.innerHTML = `<p style="grid-column:1/-1;">Top matches for <b>${name}</b>. Fight On! ✌</p>`;
+      scored.forEach(c => {
+        results.innerHTML += `
+          <div class="club-card">
+            <h3>${c.name}</h3>
+            <p class="match">${c.score}% match</p>${joinBadge(c)}
+            <p class="desc">${c.desc}</p>
+            <p class="info">Shared interests: ${c.shared.join(", ")}</p>
+            <p class="info">Time commitment: ${timeLabels[c.time]}</p>
+            <p class="info"><a href="${c.link}" target="_blank">Learn more →</a></p>
+          </div>`;
+      });
+    }
+
+    function randomInterest() {
+      const pick = interests[Math.floor(Math.random() * interests.length)];
+      const related = clubs.filter(c => c.tags.includes(pick));
+      const club = related[Math.floor(Math.random() * related.length)];
+
+      document.getElementById("randomTitle").textContent = pick;
+      document.getElementById("randomDesc").textContent = interestDescriptions[pick];
+      document.getElementById("randomClub").innerHTML = club
+        ? `<b>Try: ${club.name}</b> ${joinBadge(club)}<br>${club.desc}<br><a href="${club.link}" target="_blank">Learn more →</a>`
+        : "";
+      document.getElementById("randomBox").style.display = "block";
+    }
+  </script>
+</body>
+</html>
